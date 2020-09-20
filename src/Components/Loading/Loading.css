@@ -4,6 +4,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: #000;
 }
 
 .spinner {
@@ -24,7 +29,7 @@
 	display: inline-block;
 	position: absolute;
 	top: 0;
-	background-color: #333;
+	background-color: #fff;
 	border-radius: 100%;
 
 	-webkit-animation: sk-bounce 2.0s infinite ease-in-out;

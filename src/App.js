@@ -7,8 +7,16 @@ import Home from './Components/Home/Home';
 function App() {
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
-        setLoading(false);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
     }, []);
-    return <div className='App'>{isLoading ? <Loading /> : <Home />}</div>;
+    console.log(isLoading);
+    return (
+        <div className='App'>
+            {isLoading ? <Loading /> : null}
+            <Home />
+        </div>
+    );
 }
 export default App;
