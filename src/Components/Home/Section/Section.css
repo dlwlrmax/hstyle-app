@@ -1,0 +1,93 @@
+.Section {
+	display: flex;
+	width: 100%;
+	height: 105vh;
+	position: relative;
+	justify-items: center;
+	align-items: center;
+}
+
+.Section:first-of-type {
+	margin-bottom: 40px;
+}
+
+.section-content {
+	width: 80%;
+	height: 80vh;
+	margin-left: 5%;
+	display: flex;
+	position: relative;
+}
+
+.section-title {
+	position: absolute;
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: normal;
+	right: 0;
+	font-size: 15em;
+	color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	writing-mode: vertical-rl;
+	margin: 0;
+	padding: 0;
+}
+
+.section-title p {
+	margin: 0;
+}
+
+.box-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column-reverse;
+}
+
+.bg-box {
+	width: 80%;
+	height: 90%;
+	margin-right: 5%;
+	text-align: right;
+}
+
+.bg-box .slogan {
+	font-size: 1.5em;
+	padding: 2em;
+	color: var(--light-black);
+}
+
+
+.box-title {
+	background-color: var(--light-black);
+	color: white;
+	padding: 10px 70px;
+	font-size: 2em;
+	margin-bottom: 20px;
+	margin-right: 10%;
+}
+
+.section-title.left {
+	right: unset;
+	left: 0;
+	transform: rotate(180deg);
+}
+
+.box-container.left {
+	align-items: flex-start;
+}
+
+.section-content.left {
+	position: absolute;
+	right: 0;
+}
+
+.box-title.left {
+	margin-right: unset;
+	margin-left: 10%;
+}
+
+.bg-box.left {
+	margin-left: 5%;
+}

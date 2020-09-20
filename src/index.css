@@ -1,13 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster:regular);
+
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: "Fira Sans";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar {
+	display: none;
+}
+
+:root {
+	--light-black: #272727;
+	--orange: rgb(219, 119, 76);
+	--yellow: #ecc86c;
+	--light-gray: #C8C8C8;
+}
+
+.btn {
+	padding: 10px 20px;
+	white-space: nowrap;
+	border: none;
+	background-color: var(--light-black);
+	color: #fff;
+	font-size: 1.3em;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.btn:focus {
+	outline: 0;
+}
+
+.display-none {
+	display: none;
+}
+
+.hasBorder {
+	border: 0.7em solid #fff;
+}
+
+.hasShadow {
+	box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+		0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+		0 100px 80px rgba(0, 0, 0, 0.12);
+
+}
+
+.bg-secondary {
+	background-color: var(--orange);
+}
+
+.skewed {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--yellow);
+	z-index: 0;
+	transform: skewY(3deg);
+	transform-origin: 90% -56%;
+	z-index: -999;
+}
+
+.skewed-reverse {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--orange);
+	z-index: 0;
+	transform: skewY(-5deg);
+	transform-origin: 40% 75%;
+	z-index: 0;
+}
+
+
+a {
+	text-decoration: none;
 }

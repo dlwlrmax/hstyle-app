@@ -1,0 +1,90 @@
+.Footer {
+	background-color: var(--light-black);
+	height: 70vh;
+	color: var(--light-gray);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.Footer .footer-group:first-of-type {
+	width: 40%;
+}
+
+.Footer .brand-container {
+	width: 70%;
+	margin: auto;
+}
+
+.Footer .footer-brand {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.Footer .text {
+	font-size: 1.3em;
+}
+
+.Footer .footer-brand div:first-of-type {
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3.75em;
+
+}
+
+.Footer .footer-brand div:last-of-type {
+	font-size: 1.75em;
+}
+
+.Footer .footer-title {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.Footer .footer-group:last-of-type {
+	width: 25%;
+	text-align: left;
+}
+
+.Footer a {
+	color: var(--light-gray);
+	font-size: 1.5em;
+	display: flex;
+	margin: 20px;
+}
+
+.Footer a div {
+	margin-left: 40px;
+}
+
+@media (max-width:1024px) {
+	.Footer .footer-group:first-of-type {
+		display: none;
+	}
+
+	.Footer .footer-group:last-of-type {
+		width: 40%;
+	}
+}
+
+@media (max-width:570px) {
+	.Footer {
+		flex-direction: column;
+		height: unset;
+		padding: 30px;
+	}
+
+	.Footer .footer-group:nth-of-type(2) {
+		text-align: left;
+		width: 80%;
+	}
+
+	.Footer .footer-group:last-of-type {
+		width: 80%;
+		margin: 30px 0;
+	}
+}
