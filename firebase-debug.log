@@ -1,0 +1,60 @@
+[debug] [2020-09-21T05:21:06.122Z] ----------------------------------------------------------------------
+[debug] [2020-09-21T05:21:06.125Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2020-09-21T05:21:06.126Z] CLI Version:   8.10.0
+[debug] [2020-09-21T05:21:06.126Z] Platform:      linux
+[debug] [2020-09-21T05:21:06.126Z] Node Version:  v14.10.0
+[debug] [2020-09-21T05:21:06.285Z] Time:          Mon Sep 21 2020 12:21:06 GMT+0700 (Indochina Time)
+[debug] [2020-09-21T05:21:06.285Z] ----------------------------------------------------------------------
+[debug] [2020-09-21T05:21:06.286Z] 
+[debug] [2020-09-21T05:21:06.337Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-21T05:21:06.338Z] > authorizing via signed-in user
+[debug] [2020-09-21T05:21:06.338Z] [iam] checking project hstyle-56a4c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-21T05:21:06.342Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-21T05:21:06.342Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-21T05:21:07.090Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 21 Sep 2020 05:21:51 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-21T05:21:07.158Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hstyle-56a4c:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-21T05:21:20.251Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 21 Sep 2020 05:21:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=815","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-21T05:21:20.254Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hstyle-56a4c  
+ 
+[debug] [2020-09-21T05:21:29.421Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 21 Sep 2020 05:22:06 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'hstyle-56a4c'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-09-21T05:21:29.426Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hstyle-56a4c/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-09-21T05:28:17.834Z] ----------------------------------------------------------------------
+[debug] [2020-09-21T05:28:17.837Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2020-09-21T05:28:17.837Z] CLI Version:   8.10.0
+[debug] [2020-09-21T05:28:17.837Z] Platform:      linux
+[debug] [2020-09-21T05:28:17.838Z] Node Version:  v14.10.0
+[debug] [2020-09-21T05:28:17.838Z] Time:          Mon Sep 21 2020 12:28:17 GMT+0700 (Indochina Time)
+[debug] [2020-09-21T05:28:17.838Z] ----------------------------------------------------------------------
+[debug] [2020-09-21T05:28:17.839Z] 
+[debug] [2020-09-21T05:28:17.867Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-21T05:28:17.868Z] > authorizing via signed-in user
+[debug] [2020-09-21T05:28:17.868Z] [iam] checking project hstyle-56a4c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-21T05:28:17.872Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hstyle-56a4c:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-21T05:28:18.884Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 21 Sep 2020 05:29:03 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=823","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-21T05:28:18.887Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hstyle-56a4c  
+ 
+[debug] [2020-09-21T05:28:19.285Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 21 Sep 2020 05:29:04 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'hstyle-56a4c'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-09-21T05:28:19.291Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hstyle-56a4c/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-09-21T05:28:21.365Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 21 Sep 2020 05:29:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[hstyle-56a4c]: beginning deploy... 
+[info] i  hosting[hstyle-56a4c]: found 24 files in build 
+[debug] [2020-09-21T05:28:21.939Z] [hosting] hash cache [YnVpbGQ] stored for 24 files
+[debug] [2020-09-21T05:28:21.939Z] [hosting][hash queue][FINAL] {"max":522,"min":93,"avg":172.75,"active":0,"complete":24,"success":24,"errored":0,"retried":0,"total":24,"elapsed":549}
+[debug] [2020-09-21T05:28:21.940Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hstyle-56a4c/versions/713d3188c3d37d34:populateFiles  
+ <request body omitted>
+[debug] [2020-09-21T05:28:26.395Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 21 Sep 2020 05:29:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-21T05:28:26.409Z] [hosting][populate queue][FINAL] {"max":4470,"min":4470,"avg":4470,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":4481}
+[debug] [2020-09-21T05:28:26.410Z] [hosting] uploads queued: 11

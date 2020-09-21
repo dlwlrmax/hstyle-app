@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Products.css';
-import clothing from '../../../../img/clothing-thum.png';
-import jew from '../../../../img/jew-thum.png';
-import glasses from '../../../../img/glass-thum.png';
+import clothing from '../../../../../img/clothing-thum.png';
+import jew from '../../../../../img/jew-thum.png';
+import glasses from '../../../../../img/glass-thum.png';
 
 const Products = props => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

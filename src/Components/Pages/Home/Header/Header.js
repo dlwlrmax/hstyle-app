@@ -3,9 +3,9 @@ import './Header.css';
 
 import ScrollIndicator from './ScrollIndicator/ScrollIndicator';
 
-import HeaderLeftImage from '../../../img/background.png';
-import HeaderRightImage from '../../../img/background3.png';
-import HeaderCenterImage from '../../../img/header-center.png';
+import HeaderLeftImage from '../../../../img/background.png';
+import HeaderRightImage from '../../../../img/background3.png';
+import HeaderCenterImage from '../../../../img/header-center.png';
 
 const Header = () => {
     return (
