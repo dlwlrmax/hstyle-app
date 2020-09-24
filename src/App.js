@@ -9,6 +9,7 @@ import Home from './Components/Pages/Home/Home';
 import Shop from './Components/Pages/Shop/Shop';
 import About from './Components/Pages/About/About';
 import Contact from './Components/Pages/Contact/Contact';
+import Collections from './Components/Pages/Collections/Collections';
 
 function App() {
     const [isLoading, setLoading] = useState(true);
@@ -32,6 +33,9 @@ function App() {
                     </Route>
                     <Route path='/contact'>
                         <Contact />
+                    </Route>
+                    <Route path='/collections'>
+                        <Collections />
                     </Route>
                     <Route path='/'>
                         <Home />

@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div className='Home'>
             <Header />
-            <Section sectionTitle='Product' boxTitle='H-style' boxColor='var(--orange)' bgColor='var(--yellow)' direction='right' transform=' '>
+            <Section sectionTitle='Product' boxTitle='Our Products' boxColor='var(--orange)' bgColor='var(--yellow)' direction='right' transform=' '>
                 <Product />
             </Section>
             <Section

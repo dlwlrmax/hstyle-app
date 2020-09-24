@@ -17,7 +17,7 @@ const Products = props => {
     });
     let _product = (
         <div className='product-layout'>
-            <div className='home-product clothing'>
+            <div className='home-product hvr-grow-rotate clothing'>
                 <div className='product-container hasBorder'>
                     <img src={clothing} alt='clothing'></img>
                     <div className='product-name'>
@@ -26,7 +26,7 @@ const Products = props => {
                 </div>
             </div>
             <div className='product-group'>
-                <div className='home-product glasses'>
+                <div className='home-product hvr-grow-rotate glasses'>
                     <div className='product-container hasBorder'>
                         <img src={glasses} alt='glasses'></img>
                         <div className='product-name'>
@@ -34,7 +34,7 @@ const Products = props => {
                         </div>
                     </div>
                 </div>
-                <div className='home-product jew'>
+                <div className='home-product hvr-grow-rotate jew'>
                     <div className='product-container hasBorder'>
                         <div className='product-name'>
                             <p>Jewelries</p>
@@ -48,7 +48,7 @@ const Products = props => {
     if (windowWidth <= 1024) {
         _product = (
             <div className='product-layout'>
-                <div className='home-product clothing'>
+                <div className='home-product hvr-grow-rotate clothing'>
                     <div className='product-container hasBorder'>
                         <img src={clothing} alt='clothing'></img>
                         <div className='product-name'>
@@ -56,7 +56,7 @@ const Products = props => {
                         </div>
                     </div>
                 </div>
-                <div className='home-product glasses'>
+                <div className='home-product hvr-grow-rotate glasses'>
                     <div className='product-container hasBorder'>
                         <img src={glasses} alt='glasses'></img>
                         <div className='product-name'>
@@ -64,7 +64,7 @@ const Products = props => {
                         </div>
                     </div>
                 </div>
-                <div className='home-product jew'>
+                <div className='home-product hvr-grow-rotate jew'>
                     <div className='product-container hasBorder'>
                         <div className='product-name'>
                             <p>Jewelries</p>

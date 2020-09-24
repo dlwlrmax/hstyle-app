@@ -57,6 +57,10 @@
 	margin: 20px;
 }
 
+.Footer a:hover {
+	color: var(--orange)
+}
+
 .Footer a div {
 	margin-left: 40px;
 }

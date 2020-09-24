@@ -6,6 +6,7 @@ import ScrollIndicator from './ScrollIndicator/ScrollIndicator';
 import HeaderLeftImage from '../../../../img/background.png';
 import HeaderRightImage from '../../../../img/background3.png';
 import HeaderCenterImage from '../../../../img/header-center.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -29,7 +30,9 @@ const Header = () => {
             </div>
             <div className='discover'>
                 <div className='btn-container'>
-                    <button className='btn shop-now'>Shop Now</button>
+                    <Link to='/shop'>
+                        <button className='btn shop-now hvr-bob'>Shop Now</button>
+                    </Link>
                     <ScrollIndicator />
                 </div>
             </div>

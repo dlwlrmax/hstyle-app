@@ -26,25 +26,25 @@ const Footer = props => {
             <div className='footer-group'>
                 <div className='footer-title'>Follow us:</div>
                 <div className='social-link'>
-                    <a href='/face'>
+                    <a href='/'>
                         <div className='icon'>
                             <FontAwesomeIcon icon={faFacebook} />
                         </div>
                         <div className='social-text'>Facebook</div>
                     </a>
-                    <a href='/face'>
+                    <a href='/'>
                         <div className='icon'>
                             <FontAwesomeIcon icon={faTwitter} />
                         </div>
                         <div className='social-text'>Twitter</div>
                     </a>
-                    <a href='/face'>
+                    <a href='/'>
                         <div className='icon'>
                             <FontAwesomeIcon icon={faYoutube} />
                         </div>
                         <div className='social-text'>Youtube</div>
                     </a>
-                    <a href='/face'>
+                    <a href='/'>
                         <div className='icon'>
                             <FontAwesomeIcon icon={faInstagramSquare} />
                         </div>
@@ -55,21 +55,21 @@ const Footer = props => {
             <div className='footer-group'>
                 <div className='footer-title'>Contact us:</div>
                 <div className='social-link'>
-                    <a href='/face'>
+                    <a href='/'>
                         <div className='icon'>
                             {' '}
                             <FontAwesomeIcon icon={faEnvelope} />
                         </div>
                         <div className='social-text'>hstyle@htyle.hstyle</div>
                     </a>
-                    <a href='/face'>
+                    <a href='/'>
                         <div className='icon'>
                             {' '}
                             <FontAwesomeIcon icon={faStreetView} />
                         </div>
                         <div className='social-text'>9882 W. Homestead St. Cary, NC 27511</div>
                     </a>
-                    <a href='/face'>
+                    <a href='/'>
                         <div className='icon'>
                             {' '}
                             <FontAwesomeIcon icon={faPhone} />
