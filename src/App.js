@@ -18,6 +18,7 @@ function App() {
             setLoading(false);
         }, 1000);
     }, []);
+
     console.log(isLoading);
     return (
         <div className='App'>

@@ -8,6 +8,8 @@ import About from './Section/About/About';
 import Footer from '../../Footer/Footer';
 
 const Home = () => {
+    document.title = 'H-STYLE';
+
     return (
         <div className='Home'>
             <Header />

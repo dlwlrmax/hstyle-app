@@ -19,6 +19,7 @@ body::-webkit-scrollbar {
 	--orange: rgb(219, 119, 76);
 	--yellow: #ecc86c;
 	--light-gray: #C8C8C8;
+	--dark: #3F3E3E;
 }
 
 .btn {

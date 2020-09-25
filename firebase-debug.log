@@ -1,0 +1,39 @@
+[debug] [2020-09-25T02:11:19.226Z] ----------------------------------------------------------------------
+[debug] [2020-09-25T02:11:19.230Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2020-09-25T02:11:19.230Z] CLI Version:   8.11.1
+[debug] [2020-09-25T02:11:19.230Z] Platform:      linux
+[debug] [2020-09-25T02:11:19.231Z] Node Version:  v14.10.0
+[debug] [2020-09-25T02:11:19.310Z] Time:          Fri Sep 25 2020 09:11:19 GMT+0700 (Indochina Time)
+[debug] [2020-09-25T02:11:19.310Z] ----------------------------------------------------------------------
+[debug] [2020-09-25T02:11:19.310Z] 
+[debug] [2020-09-25T02:11:19.367Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-25T02:11:19.368Z] > authorizing via signed-in user
+[debug] [2020-09-25T02:11:19.369Z] [iam] checking project hstyle-56a4c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-25T02:11:19.390Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hstyle-56a4c:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-25T02:11:29.523Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[debug] [2020-09-25T02:11:29.526Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hstyle-56a4c  
+ 
+[debug] [2020-09-25T02:11:32.078Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 25 Sep 2020 02:11:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'hstyle-56a4c'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-09-25T02:11:32.085Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hstyle-56a4c/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-09-25T02:20:16.958Z] ----------------------------------------------------------------------
+[debug] [2020-09-25T02:20:16.961Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2020-09-25T02:20:16.962Z] CLI Version:   8.11.1
+[debug] [2020-09-25T02:20:16.962Z] Platform:      linux
+[debug] [2020-09-25T02:20:16.962Z] Node Version:  v14.10.0
+[debug] [2020-09-25T02:20:16.963Z] Time:          Fri Sep 25 2020 09:20:16 GMT+0700 (Indochina Time)
+[debug] [2020-09-25T02:20:16.963Z] ----------------------------------------------------------------------
+[debug] [2020-09-25T02:20:16.963Z] 
+[debug] [2020-09-25T02:20:16.972Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-25T02:20:16.973Z] > authorizing via signed-in user
+[debug] [2020-09-25T02:20:16.973Z] [iam] checking project hstyle-56a4c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-25T02:20:16.977Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hstyle-56a4c:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-25T02:20:23.559Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 25 Sep 2020 02:20:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=835","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-25T02:20:23.565Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hstyle-56a4c  
+ 
