@@ -19,7 +19,6 @@ function App() {
         }, 1000);
     }, []);
 
-    console.log(isLoading);
     return (
         <div className='App'>
             <Router>

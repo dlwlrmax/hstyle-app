@@ -1,0 +1,146 @@
+.MoboBarContainer {
+	position: fixed;
+	height: 100vh;
+	z-index: 9999;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	/* lag  */
+	/* filter: drop-shadow(0 2.8px 2.2px rgba(0, 0, 0, 0.056)) drop-shadow(0 6.7px 5.3px rgba(0, 0, 0, 0.081)) drop-shadow(0 6.7px 5.3px rgba(0, 0, 0, 0.081)) drop-shadow(0 22.3px 17.9px rgba(0, 0, 0, 0.119)) drop-shadow(0 22.3px 17.9px rgba(0, 0, 0, 0.119)) drop-shadow(0 100px 80px rgba(0, 0, 0, 0.2)); */
+	filter: drop-shadow(10px 3px 38px rgba(0, 0, 0, 0.75));
+}
+
+.MoboNavbar {
+	height: 100vh;
+	background-color: white;
+	z-index: 9999;
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 80%;
+	padding: 0;
+	clip-path: polygon(0 0, 78% 0, 65% 100%, 0% 100%);
+	text-align: right;
+}
+
+.MoboNavLinkContainer {
+	margin-right: 50%;
+}
+
+.MoboNavLinkContainer:first-of-type {
+	margin-right: calc(35% - 20px);
+}
+
+.MoboNavLinkContainer:nth-of-type(2) {
+	margin-right: calc(35% - 17px);
+}
+
+.MoboNavLinkContainer:nth-of-type(3) {
+	margin-right: calc(35% - 15px);
+}
+
+.MoboNavLinkContainer:nth-of-type(4) {
+	margin-right: calc(35% - 11px);
+}
+
+.MoboNavLinkContainer:last-of-type {
+	margin-right: calc(35% - 6px);
+}
+
+.MoboNavLinkContainer a {
+	color: var(--dark);
+	font-weight: 600;
+}
+
+.NavLink {
+	list-style: none;
+	margin-top: 10vh;
+	font-size: 3em;
+}
+
+.CloseIcon {
+	margin-right: 25%;
+	padding-top: 30px;
+
+}
+
+.CloseIcon svg {
+	font-size: 3em;
+	color: var(--dark);
+}
+
+
+.user {
+	width: 100%;
+	display: flex;
+	flex-flow: row-reverse nowrap;
+	align-items: center;
+	margin-right: 50%;
+}
+
+.avt {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: calc(25% + 10px);
+	margin-left: 10px;
+}
+
+.usrInfo {
+	color: var(--dark);
+}
+
+.usrInfo div:first-child {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.usrInfo div:last-child {
+	font-size: 1.5em;
+}
+
+.avt img {
+	width: 100%;
+	display: inline-block;
+}
+
+@media (max-width:800px) {
+	.NavLink {
+		margin-right: 5%;
+	}
+}
+
+@media (max-width:550px) {
+	.user {
+		flex-direction: column;
+		align-items: flex-end;
+		margin-right: calc(25% + 15px);
+		width: unset;
+	}
+
+	.usrInfo {
+		margin-top: 10px;
+		margin-right: 10%;
+	}
+
+	.avt {
+		margin: 0;
+	}
+
+	.NavLink {
+		margin-right: 15%;
+	}
+}
+
+@media (max-width:340px) {
+	.NavLink {
+		font-size: 2.5em;
+	}
+}

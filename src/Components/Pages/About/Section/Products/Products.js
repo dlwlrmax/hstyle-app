@@ -8,7 +8,7 @@ const Products = props => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const widthChangeHandler = () => {
-        console.log(windowWidth);
+        //console.log(windowWidth);
         setWindowWidth(window.innerWidth);
     };
 

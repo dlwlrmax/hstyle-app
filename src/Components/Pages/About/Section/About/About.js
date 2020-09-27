@@ -1,7 +1,6 @@
 import React from 'react';
 import image from '../../../../../img/about-thum.png';
 import './About.css';
-import { Link } from 'react-router-dom';
 
 const About = props => {
     return (
@@ -19,10 +18,6 @@ const About = props => {
                         2012, H-STYLE’s sales ranked first in both Tmall.com and JD.com.
                     </p>
                 </div>
-
-                <Link to='/about'>
-                    <button className='btn hasShadow bg-secondary hvr-bob'>Learn more</button>
-                </Link>
             </div>
             <div className='about-image'>
                 <img src={image} alt='hey' className='hasBorder hasShadow'></img>

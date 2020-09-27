@@ -1,43 +1,38 @@
 import React from 'react';
-import './Header.css';
+import Style from './Header.module.css';
+import image1 from '../../../../img/71008b98d23ec316b77716c52d851c42.jpg';
+import image2 from '../../../../img/120013138_261788528304275_6889414303221423611_n.jpg';
+import image3 from '../../../../img/______3.jpeg';
+import image4 from '../../../../img/4(243).jpeg';
+import arrow from '../../../../img/arrow.png';
 
-import ScrollIndicator from './ScrollIndicator/ScrollIndicator';
-
-import HeaderLeftImage from '../../../../img/background.png';
-import HeaderRightImage from '../../../../img/background3.png';
-import HeaderCenterImage from '../../../../img/header-center.png';
-import { Link } from 'react-router-dom';
-
-const Header = () => {
+export default function Header() {
     return (
-        <div className='Header'>
-            <div className='image-layout'>
-                <div className='left-image'>
-                    <img src={HeaderLeftImage} alt='left header'></img>
+        <div className={Style.Header}>
+            <div className={Style.leftContent}>
+                <div className={Style.image}>
+                    <img src={image1} alt='image1' className='hasShadow' />
                 </div>
-                <div className='center-image'>
-                    <img src={HeaderCenterImage} alt='center header'></img>
-                </div>
-                <div className='right-image'>
-                    <img src={HeaderRightImage} alt='right header'></img>
+                <div className={Style.image}>
+                    <img src={image2} alt='image2' className='hasShadow' />
                 </div>
             </div>
-            <div className='slogan'>
-                <blockquote>
-                    “Be my <strong>fashionista</strong>.”
-                    <div className='author'>- Elisha Horn</div>
-                </blockquote>
+            <div className={Style.centerContent}>
+                <div className={Style.lefText}>Fashion</div>
+
+                <img src={arrow} alt='arrow' />
+
+                <div className={Style.rightText}>Style</div>
             </div>
-            <div className='discover'>
-                <div className='btn-container'>
-                    <Link to='/shop'>
-                        <button className='btn shop-now hvr-bob'>Shop Now</button>
-                    </Link>
-                    <ScrollIndicator />
+
+            <div className={Style.rightContent}>
+                <div className={Style.image}>
+                    <img src={image3} alt='image3' className='hasShadow' />
+                </div>
+                <div className={Style.image}>
+                    <img src={image4} alt='image4' className='hasShadow' />
                 </div>
             </div>
         </div>
     );
-};
-
-export default Header;
+}

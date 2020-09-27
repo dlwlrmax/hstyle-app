@@ -1,34 +1,13 @@
 import React from 'react';
-import './Home.css';
+import Clothing from './Clothing/Clothing';
 
-import Header from './Header/Header.js';
-import Section from './Section/Section';
-import Product from './Section/Products/Products';
-import About from './Section/About/About';
-import Footer from '../../Footer/Footer';
+import Header from './Header/Header';
 
-const Home = () => {
-    document.title = 'H-STYLE';
-
+export default function Home() {
     return (
         <div className='Home'>
             <Header />
-            <Section sectionTitle='Product' boxTitle='Our Products' boxColor='var(--orange)' bgColor='var(--yellow)' direction='right' transform=' '>
-                <Product />
-            </Section>
-            <Section
-                sectionTitle='H-STYLE'
-                boxTitle='About H-style'
-                boxColor='var(--yellow)'
-                bgColor='var(--orange)'
-                direction='left'
-                dNone='display-none'
-                transform='-reverse'>
-                <About />
-            </Section>
-            <Footer />
+            <Clothing />
         </div>
     );
-};
-
-export default Home;
+}

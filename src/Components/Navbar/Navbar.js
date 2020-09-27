@@ -3,6 +3,7 @@ import Style from './Navbar.module.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faSearch, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import MoboBar from './MoboBar/MoboBar';
 
 const Navbar = () => {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
@@ -16,11 +17,17 @@ const Navbar = () => {
 
     const openSidebar = () => {
         setSideBar(value => !value);
-        console.log(isSidebarOpened);
+        //console.log(isSidebarOpened);
+    };
+
+    const closeNavHandler = () => {
+        setSideBar(false);
     };
 
     useEffect(() => {
         window.addEventListener('resize', onWidthChange);
+        onWidthChange();
+        return () => window.removeEventListener('resize', onWidthChange);
     });
 
     const desktopNav = (
@@ -57,29 +64,6 @@ const Navbar = () => {
         </div>
     );
 
-    const MoboBar = (
-        <div className={Style.MoboBarContainer}>
-            <ul className={Style.MoboNavbar}>
-                <li className={Style.MoboNavLinkContainer}>
-                    <Link to='/'>Home</Link>
-                </li>{' '}
-                <li className={Style.MoboNavLinkContainer}>
-                    <Link to='/collections'>Collections</Link>
-                </li>{' '}
-                <li className={Style.MoboNavLinkContainer}>
-                    <Link to='/shop'>Shop</Link>
-                </li>{' '}
-                <li className={Style.MoboNavLinkContainer}>
-                    <Link to='/about'>About</Link>
-                </li>{' '}
-                <li className={Style.MoboNavLinkContainer}>
-                    <Link to='/contact'>Contact</Link>
-                </li>
-            </ul>
-            <div className={Style.shadow}></div>
-        </div>
-    );
-
     const MoboNav = (
         <div className={Style.navContainer}>
             <div className={Style.LeftElements}>
@@ -101,10 +85,10 @@ const Navbar = () => {
                     <FontAwesomeIcon icon={faSignInAlt} />
                 </li>
             </ul>
-            {isSidebarOpened && MoboBar}
+            {isSidebarOpened && <MoboBar closeNavHandler={closeNavHandler} />}
         </div>
     );
-    return browserWidth > 800 ? desktopNav : MoboNav;
+    return browserWidth > 1200 ? desktopNav : MoboNav;
 };
 
 export default Navbar;

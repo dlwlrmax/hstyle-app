@@ -9,8 +9,8 @@
 
 .Navbar {
 	display: flex;
-	max-width: 740px;
-	width: 70%;
+	max-width: 950px;
+	width: 80%;
 	list-style: none;
 	justify-content: space-between;
 	padding: 0;
@@ -56,6 +56,9 @@
 	color: var(--dark);
 	position: absolute;
 	right: 40px;
+	height: 100%;
+	align-items: center;
+	margin: 0;
 }
 
 .IconBar li {
@@ -75,75 +78,14 @@
 	transform: scale(1.1);
 }
 
-.MoboBarContainer {
-	position: fixed;
-	height: 100vh;
-	z-index: 9999;
-	margin: 0;
-	padding: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	width: 100%;
-	filter: drop-shadow(4px 6px 5px #32320080);
-}
-
-.MoboNavbar {
-	height: 100vh;
-	list-style: none;
-	background-color: white;
-	z-index: 9999;
-	margin: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	width: 80%;
-	padding: 0;
-	clip-path: polygon(0 0, 78% 0, 65% 100%, 0% 100%);
-	font-size: 2.5em;
-	text-align: right;
-}
-
-.MoboNavLinkContainer {
-	margin-right: 50%;
-}
-
-.MoboNavLinkContainer:first-of-type {
-	margin-right: calc(35% - 20px);
-}
-
-.MoboNavLinkContainer:nth-of-type(2) {
-	margin-right: calc(35% - 14px);
-}
-
-.MoboNavLinkContainer:nth-of-type(3) {
-	margin-right: calc(35% - 11px);
-}
-
-.MoboNavLinkContainer:nth-of-type(4) {
-	margin-right: calc(35% - 6px);
-}
-
-.MoboNavLinkContainer:last-of-type {
-	margin-right: calc(35%);
-}
-
-.MoboNavLinkContainer a {
-	color: var(--dark);
-	font-weight: 600;
-}
-
-
-
-@media (max-width:1024px) {
-	.IconBar li {
-		padding: 0px 10%;
+@media(max-width:1440px) {
+	.Navbar {
+		max-width: 740px;
 	}
 }
 
-@media (max-width:800px) {
+
+@media (max-width:1200px) {
 	.navContainer {
 		justify-content: space-evenly;
 	}
@@ -186,6 +128,7 @@
 	}
 }
 
+
 @media (max-width:500px) {
 
 	.LeftElements,
@@ -196,5 +139,29 @@
 	.LeftElements div,
 	.IconBar li {
 		padding: 0 10px;
+	}
+
+	.Search {
+		position: fixed;
+		bottom: 10%;
+		right: 10%;
+		z-index: 9999;
+		font-size: 2em;
+		background-color: var(--orange);
+		padding: 0px !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		box-shadow:
+			0 2.8px 2.2px rgba(0, 0, 0, 0.084),
+			0 6.7px 5.3px rgba(0, 0, 0, 0.121),
+			0 12.5px 10px rgba(0, 0, 0, 0.15),
+			0 22.3px 17.9px rgba(0, 0, 0, 0.179),
+			0 41.8px 33.4px rgba(0, 0, 0, 0.216),
+			0 100px 80px rgba(0, 0, 0, 0.3);
+		color: white;
 	}
 }

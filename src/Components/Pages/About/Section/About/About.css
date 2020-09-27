@@ -47,6 +47,7 @@
 
 	.about-container .about-image {
 		width: 60%;
+		margin-top: 100px;
 	}
 
 	.about-container .text-content-container {
@@ -56,6 +57,8 @@
 
 	.about-container .text-content {
 		margin-top: 20px;
+		width: 90%;
+		margin-bottom: 15px;
 	}
 
 }
