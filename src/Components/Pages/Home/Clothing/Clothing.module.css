@@ -7,7 +7,7 @@
 .TitleWrapper {
 	width: 40%;
 	filter: drop-shadow(0 2.8px 2.2px rgba(0, 0, 0, 0.056)) drop-shadow(0 6.7px 5.3px rgba(0, 0, 0, 0.081)) drop-shadow(0 6.7px 5.3px rgba(0, 0, 0, 0.081)) drop-shadow(0 22.3px 17.9px rgba(0, 0, 0, 0.119)) drop-shadow(0 22.3px 17.9px rgba(0, 0, 0, 0.119)) drop-shadow(0 100px 80px rgba(0, 0, 0, 0.2));
-
+	height: 100vh;
 }
 
 .Title {
@@ -16,4 +16,129 @@
 	-webkit-clip-path: polygon(0 0, 100% 0%, 65% 100%, 0% 100%);
 	clip-path: polygon(0 0, 100% 0%, 65% 100%, 0% 100%);
 	background-color: var(--yellow);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.upperText,
+.lowerText {
+	font-size: 3em;
+	font-weight: 600;
+	color: var(--light-black)
+}
+
+.upperText {
+	padding-top: 100px;
+}
+
+.productType {
+	font-size: 5em;
+	font-weight: 600;
+	color: white;
+}
+
+.Content {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentWrapper {
+	height: 70%;
+	width: 90%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.Items {
+	Width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.itemContainer {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+
+.itemInfo {
+	padding-right: 20px;
+	color: var(--light-black);
+	text-align: right;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+}
+
+.lowerInfo {
+	display: flex;
+	flex-flow: column;
+}
+
+.itemPrice {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.btn {
+	border: none;
+	color: white;
+	font-size: 1.3em;
+	font-weight: 600;
+	background-color: var(--light-black);
+	padding: 0 30px;
+	margin-top: 20px;
+}
+
+.itemName {
+	font-weight: 600;
+	font-size: 3em;
+}
+
+.itemCollection {
+	font-size: 1.5em;
+}
+
+.productImage {
+	height: 100%
+}
+
+.productImage img {
+	height: 100%;
+}
+
+.goToShop {
+	width: 30%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.goToShop>div {
+	width: 40%;
+}
+
+.text {
+	color: var(--light-black);
+	font-size: 2.5em;
+	font-weight: 600;
+}
+
+.goToShop .icon svg {
+	width: 100%;
+	fill: var(--light-black);
+}
+
+.Items:hover {
+	cursor: url("../../../../img/left-arrow.png"), auto !important;
 }

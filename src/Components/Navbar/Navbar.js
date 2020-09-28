@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const onWidthChange = () => {
         setBrowserWidth(window.innerWidth);
-        console.log(browserWidth);
+        //console.log(browserWidth);
     };
 
     const openSidebar = () => {

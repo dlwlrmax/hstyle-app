@@ -14,9 +14,7 @@ import Collections from './Components/Pages/Collections/Collections';
 function App() {
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
+        setLoading(false);
     }, []);
 
     return (
