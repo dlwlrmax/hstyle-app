@@ -1,0 +1,43 @@
+.MoboItem {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-top: 75px;
+}
+
+.Item {
+	width: 40%;
+	margin-bottom: 50px;
+}
+
+.image {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.image img {
+	width: 100%;
+}
+
+.info {
+	text-align: left;
+	color: var(--dark)
+}
+
+.name {
+	font-size: 3em;
+	font-weight: 600;
+}
+
+.price {
+	font-size: 2em;
+}
+
+@media (max-width:500px) {
+	.Item {
+		width: 80%;
+	}
+}

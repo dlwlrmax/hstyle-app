@@ -193,3 +193,15 @@ a {
 	-webkit-animation-direction: normal, alternate;
 	animation-direction: normal, alternate;
 }
+
+.CursorLeft:hover {
+	cursor: url("https://i.imgur.com/AroP91L.png"), auto !important;
+}
+
+.CursorRight:hover {
+	cursor: url("https://i.imgur.com/CwLVYeZ.png"), auto !important;
+}
+
+.show {
+	display: block !important;
+}

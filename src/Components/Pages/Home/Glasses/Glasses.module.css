@@ -1,4 +1,4 @@
-.Clothing {
+.Glasses {
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -12,25 +12,25 @@
 .Title {
 	width: 100%;
 	height: 100vh;
-	-webkit-clip-path: polygon(0 0, 100% 0%, 65% 100%, 0% 100%);
-	clip-path: polygon(0 0, 100% 0%, 65% 100%, 0% 100%);
+	clip-path: polygon(0 0, 63% 0, 100% 100%, 0% 100%);
 	background-color: var(--yellow);
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
 	text-align: right;
+	justify-content: flex-end;
 }
 
 .Title>div:first-child {
-	margin-right: 15%;
+	margin-right: 25%;
 }
 
 .productType {
-	margin-right: 17%;
+	margin-right: 20%;
 }
 
 .Title>div:last-child {
-	margin-right: 21%;
+	margin-right: 19%;
 }
 
 .upperText,
@@ -40,8 +40,8 @@
 	color: var(--light-black)
 }
 
-.upperText {
-	padding-top: 30vh;
+.lowerText {
+	padding-bottom: 30vh;
 }
 
 .productType {
@@ -102,5 +102,7 @@
 		font-size: 2em;
 	}
 
-
+	.lowerText {
+		padding-bottom: 30px;
+	}
 }

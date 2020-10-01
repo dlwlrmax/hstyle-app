@@ -1,10 +1,10 @@
 .image-layout {
 	position: relative;
-	width: 80%;
+	width: 70%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 100px auto;
+	margin-top: 100px;
 }
 
 .image-layout img {
@@ -41,7 +41,13 @@
 
 
 .Header {
+	display: flex;
 	position: relative;
+	height: 91vh;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	margin: auto;
 }
 
 .Header .slogan {

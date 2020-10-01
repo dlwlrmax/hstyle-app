@@ -1,0 +1,89 @@
+.Items {
+	Width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.itemContainer {
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+
+.itemInfo {
+	padding-right: 20px;
+	color: var(--light-black);
+	text-align: right;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+}
+
+.lowerInfo {
+	display: flex;
+	flex-flow: column;
+}
+
+.itemPrice {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.itemName {
+	font-weight: 600;
+	font-size: 3em;
+}
+
+.itemCollection {
+	font-size: 1.5em;
+}
+
+
+.btn {
+	border: none;
+	color: white;
+	font-size: 1.3em;
+	font-weight: 600;
+	background-color: var(--light-black);
+	padding: 0 30px;
+	margin-top: 20px;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+.arrowRight,
+.arrowLeft {
+	display: none;
+	font-size: 5em;
+	color: var(--dark);
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+	cursor: pointer;
+
+}
+
+.arrowRightContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.prvItem {
+	width: 100%;
+	height: 100%;
+}
+
+.nxtItem {
+	min-width: 100px;
+	width: 100%;
+}

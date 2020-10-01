@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Items from '../Items/Items';
 import MoboItem from '../MoboItem/MoboItem';
-import Style from './Clothing.module.css';
-
+import Style from './Glasses.module.css';
 const arrow = (
     <svg
         version='1.1'
@@ -41,8 +40,7 @@ c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241
         <g></g>
     </svg>
 );
-
-export default function Clothing({ products }) {
+export default function Glasses({ products }) {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
 
     const sizeChangeHandler = () => {
@@ -57,7 +55,7 @@ export default function Clothing({ products }) {
     });
 
     const desktop = (
-        <div className={Style.Clothing}>
+        <div className={Style.Glasses}>
             <div className={Style.TitleWrapper}>
                 <div className={Style.Title}>
                     <div className={Style.upperText}>Fresh your look with our</div>
@@ -76,7 +74,6 @@ export default function Clothing({ products }) {
             </div>
         </div>
     );
-
     const mobile = (
         <div className={Style.MoboClothing}>
             <div className={Style.text}>

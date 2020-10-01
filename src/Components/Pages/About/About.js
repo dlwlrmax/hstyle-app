@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 
-import Header from './Header/Header.js';
+import Header from '../About/Header/Header.js';
 import Section from './Section/Section';
 import Product from './Section/Products/Products';
 import SAbout from './Section/About/About';
