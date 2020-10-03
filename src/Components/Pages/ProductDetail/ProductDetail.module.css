@@ -1,0 +1,134 @@
+.ProductDetail {
+	width: 100%;
+	height: 91vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.goBack {
+	position: absolute;
+	z-index: 9999;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+}
+
+.backBtn {
+	font-size: 1.5em;
+	color: var(--dark);
+	font-weight: 600;
+}
+
+.Content {
+	margin: auto;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	height: 50%;
+}
+
+
+
+.line {
+	width: 30px;
+	height: 2px;
+	background-color: var(--dark);
+	display: block;
+}
+
+.ProductImage {
+	display: flex;
+	width: 50%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.ProductImage img {
+	width: 100%;
+	display: block;
+}
+
+.ProductImage>div {
+	box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+		0 12.5px 10px rgba(0, 0, 0, 0.035),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+		0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.ProductImage>div:not(.mainImage) {
+	width: 20%;
+}
+
+.mainImage {
+	width: 50%;
+}
+
+.productInfo {
+	color: var(--light-black);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	text-align: right;
+}
+
+.Name {
+	font-size: 3em;
+	font-weight: 600;
+}
+
+.Collection {
+	font-size: 1.5em;
+}
+
+.price {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.lowerContent {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;
+	width: 100%;
+}
+
+.cartBtn {
+	margin-top: 10px;
+	border: none;
+	background-color: var(--dark);
+	color: white;
+	padding: 10px 30px;
+}
+
+.centerContent {
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.centerContent input {
+	width: 40%;
+	font-size: 1.2em;
+	text-align: right;
+	border: 3px var(--dark) solid;
+}
+
+.centerContent button {
+	border: none;
+	padding: 5px 10px;
+	background-color: var(--dark);
+	color: white;
+}
+
+.centerContent button:focus {
+	outline: none;
+}

@@ -1,0 +1,21 @@
+.Header {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 80%;
+	margin: auto;
+	height: 91vh;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Header>div {
+	width: 40%;
+}
+
+.rightContent .image {
+	width: 80%;
+}
+
+.rightContent .image img {
+	width: 100%;
+}

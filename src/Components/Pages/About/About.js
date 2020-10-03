@@ -8,7 +8,7 @@ import SAbout from './Section/About/About';
 import Footer from '../../Footer/Footer';
 
 const About = () => {
-    document.title = 'H-STYLE';
+    document.title = 'About';
 
     return (
         <div className='About'>

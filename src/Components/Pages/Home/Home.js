@@ -88,6 +88,7 @@ const GLASSES = [
 ];
 
 export default function Home() {
+    document.title = 'H-STYLE';
     return (
         <div className='Home'>
             <Header />

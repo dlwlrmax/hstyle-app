@@ -1,0 +1,39 @@
+.Header {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 80%;
+	margin: auto;
+	height: 91vh;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Header>div:first-child {
+	width: 40%;
+}
+
+.Header>div:last-child {
+	width: 50%;
+}
+
+.rightContent .image {
+	width: 100%;
+}
+
+.rightContent .image img {
+	width: 100%;
+}
+
+.leftContent {
+	color: var(--dark);
+}
+
+.title {
+	font-size: 5em;
+	font-weight: 600;
+}
+
+.content {
+	font-size: 1.5em;
+	line-height: 1.5;
+}

@@ -23,19 +23,29 @@ export default function MoboBar(props) {
                 </div>
                 <ul className={Style.NavLink}>
                     <li className={Style.MoboNavLinkContainer}>
-                        <Link to='/'>Home</Link>
+                        <Link onClick={props.closeNavHandler} to='/'>
+                            Home
+                        </Link>
                     </li>{' '}
                     <li className={Style.MoboNavLinkContainer}>
-                        <Link to='/collections'>Collections</Link>
+                        <Link to='/collections' onClick={props.closeNavHandler}>
+                            Collections
+                        </Link>
                     </li>{' '}
                     <li className={Style.MoboNavLinkContainer}>
-                        <Link to='/shop'>Shop</Link>
+                        <Link to='/shop' onClick={props.closeNavHandler}>
+                            Shop
+                        </Link>
                     </li>{' '}
                     <li className={Style.MoboNavLinkContainer}>
-                        <Link to='/about'>About</Link>
+                        <Link to='/about' onClick={props.closeNavHandler}>
+                            About
+                        </Link>
                     </li>{' '}
                     <li className={Style.MoboNavLinkContainer}>
-                        <Link to='/contact'>Contact</Link>
+                        <Link to='/contact' onClick={props.closeNavHandler}>
+                            Contact
+                        </Link>
                     </li>
                 </ul>
             </div>
