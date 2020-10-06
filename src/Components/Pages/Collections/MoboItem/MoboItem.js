@@ -3,9 +3,9 @@ import Style from './MoboItem.module.css';
 export default function MoboItem({ products }) {
     return (
         <div className={Style.MoboItem}>
-            {products.map(product => {
+            {products.map((product, index) => {
                 return (
-                    <div className={Style.Item}>
+                    <div className={Style.Item} key={index}>
                         <div className={Style.image}>
                             <img src={product.image} alt='amd' />
                         </div>

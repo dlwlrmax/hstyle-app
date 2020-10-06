@@ -1,0 +1,89 @@
+.Clothes {
+	width: 90%;
+	height: 100vh;
+	display: flex;
+	margin: auto;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.Clothes>div {
+	width: 50%;
+}
+
+.rightContent {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.rightContent img {
+	width: 80%;
+}
+
+.imageContainer {
+	position: relative;
+}
+
+.backgroundText {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 20em;
+	color: lightgray;
+	width: 100% !important;
+	height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+	font-weight: 600;
+	z-index: -9999;
+	opacity: .3;
+}
+
+.leftContent {
+	text-align: left;
+	color: var(--dark);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	height: 70%;
+}
+
+.leftContent .upperContent {
+	font-size: 2em;
+	padding-left: 5%;
+	border-left: var(--dark) 5px solid
+}
+
+.leftContent .upperContent .collection {
+	font-size: 2em;
+}
+
+.leftContent .subText {
+	font-size: 3em;
+	padding-left: 5%;
+}
+
+.leftContent .mainText {
+	padding-left: 5%;
+	font-size: 6em;
+	background-color: var(--light-black);
+	color: white;
+	font-weight: 600;
+}
+
+.link {
+	text-align: left;
+	margin-top: 10vh;
+}
+
+.link>a {
+	display: inline-block;
+	font-size: 3em;
+	color: white;
+	padding: 0 5%;
+	margin-top: 10px;
+	background-color: var(--dark);
+}

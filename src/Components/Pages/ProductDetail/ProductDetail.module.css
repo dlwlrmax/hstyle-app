@@ -78,6 +78,7 @@
 	justify-content: space-between;
 	align-items: flex-end;
 	text-align: right;
+	width: 50%;
 }
 
 .Name {
@@ -110,25 +111,7 @@
 }
 
 .centerContent {
-	width: 50%;
+	width: 80%;
 	display: flex;
 	justify-content: flex-end;
-}
-
-.centerContent input {
-	width: 40%;
-	font-size: 1.2em;
-	text-align: right;
-	border: 3px var(--dark) solid;
-}
-
-.centerContent button {
-	border: none;
-	padding: 5px 10px;
-	background-color: var(--dark);
-	color: white;
-}
-
-.centerContent button:focus {
-	outline: none;
 }

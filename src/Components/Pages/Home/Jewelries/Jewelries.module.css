@@ -1,0 +1,88 @@
+.Jewelries {
+	display: flex;
+	width: 90%;
+	height: 100vh;
+	margin: auto;
+
+}
+
+.Jewelries>div {
+	width: 50%;
+}
+
+.Jewelries .leftContent {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.Jewelries .leftContent img:first-child {
+	width: 60%;
+	box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.037),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.053),
+		0 12.5px 10px rgba(0, 0, 0, 0.065),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.077),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.093),
+		0 100px 80px rgba(0, 0, 0, 0.13);
+
+}
+
+.Jewelries .leftContent img:not(:first-child) {
+	width: 30%;
+	position: absolute;
+	box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.037),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.053),
+		0 12.5px 10px rgba(0, 0, 0, 0.065),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.077),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.093),
+		0 100px 80px rgba(0, 0, 0, 0.13);
+
+}
+
+.Jewelries .leftContent img:nth-child(2) {
+	top: 10%;
+	left: 0;
+}
+
+.Jewelries .leftContent img:last-child {
+	right: 0;
+	bottom: 10%;
+}
+
+.rightContent {
+	display: flex;
+	flex-flow: column nowrap;
+	color: var(--dark);
+	text-align: right;
+	justify-content: center;
+}
+
+.subText {
+	font-size: 3em;
+	padding-right: 5%;
+}
+
+.mainText {
+	font-size: 6.5em;
+	background-color: var(--light-black);
+	color: white;
+	padding-right: 5%;
+}
+
+.link {
+	text-align: right;
+	margin-top: 10vh;
+}
+
+.link>a {
+	display: inline-block;
+	font-size: 3em;
+	color: white;
+	padding: 0 5%;
+	margin-top: 10px;
+	background-color: var(--dark);
+}

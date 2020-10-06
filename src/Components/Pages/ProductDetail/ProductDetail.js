@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../Home/Items/Image/Image';
+
 import Style from './ProductDetail.module.css';
 export default function ProductDetail() {
     return (
@@ -27,9 +27,17 @@ export default function ProductDetail() {
                         <div className={Style.Collection}>Collection 1</div>
                     </div>
                     <div className={Style.centerContent}>
-                        <button>-</button>
-                        <input type='number' defaultValue={1} />
-                        <button>+</button>
+                        <div className={Style.description}>
+                            <strong>Information</strong>
+                            <div className={Style.text}>
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus excepturi beatae molestiae at cumque
+                                    architecto neque repudiandae iusto natus consequuntur error nemo maxime dolorem animi ducimus dignissimos tempore,
+                                    hic dolorum! Vero maiores, illum eligendi dolor et a sequi, quibusdam repellat commodi excepturi maxime vitae
+                                    nostrum distinctio deleniti? Eius, asperiores magnam.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div className={Style.lowerContent}>
                         <div className={Style.price}>$2132</div>
