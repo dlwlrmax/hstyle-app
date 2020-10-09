@@ -2,6 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
+
 body {
 	margin: 0;
 	font-family: "Fira Sans";
@@ -20,6 +21,7 @@ body::-webkit-scrollbar {
 	--yellow: #ecc86c;
 	--light-gray: #C8C8C8;
 	--dark: #3F3E3E;
+	--mainFont: "Lobster";
 }
 
 .btn {

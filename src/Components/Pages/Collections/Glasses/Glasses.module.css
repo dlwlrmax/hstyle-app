@@ -1,108 +1,85 @@
 .Glasses {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-}
-
-.TitleWrapper {
-	width: 35%;
-	height: 100vh;
-}
-
-.Title {
-	width: 100%;
-	height: 100vh;
-	clip-path: polygon(0 0, 63% 0, 100% 100%, 0% 100%);
-	background-color: var(--yellow);
-	display: flex;
-	align-items: flex-end;
-	flex-direction: column;
-	text-align: right;
-	justify-content: flex-end;
-}
-
-.Title>div:first-child {
-	margin-right: 25%;
-}
-
-.productType {
-	margin-right: 20%;
-}
-
-.Title>div:last-child {
-	margin-right: 19%;
-}
-
-.upperText,
-.lowerText {
-	font-size: 3em;
-	font-weight: 600;
-	color: var(--light-black)
-}
-
-.lowerText {
-	padding-bottom: 30vh;
-}
-
-.productType {
-	font-size: 5em;
-	font-weight: 600;
-	color: white;
-}
-
-.Content {
-	width: 65%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.contentWrapper {
-	height: 70%;
 	width: 90%;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: center;
-}
-
-.goToShop {
-	width: 30%;
+	height: 100vh;
+	margin: auto;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 100px;
+	position: relative;
+}
+
+.Glasses>div {
+	width: 50%;
+}
+
+.leftContent {
+	display: flex;
+	justify-content: center;
 	align-items: center;
-
+	position: relative;
 }
 
-.goToShop>div {
-	width: 40%;
-}
-
-.text {
-	color: var(--light-black);
-	font-size: 2.5em;
-	font-weight: 600;
-}
-
-.goToShop .icon svg {
+.leftContent img {
 	width: 100%;
-	fill: var(--light-black);
+	display: block;
 }
 
-@media (max-width:1024px) {
-	.productType {
-		color: var(--orange);
-		margin-right: 0;
-		font-size: 4em;
-	}
+.mainImage {
+	width: 50%;
+	box-shadow:
+		0 2.8px 2.2px rgba(0, 0, 0, 0.037),
+		0 6.7px 5.3px rgba(0, 0, 0, 0.053),
+		0 12.5px 10px rgba(0, 0, 0, 0.065),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.077),
+		0 41.8px 33.4px rgba(0, 0, 0, 0.093),
+		0 100px 80px rgba(0, 0, 0, 0.13);
 
-	.upperText,
-	.lowerText {
-		font-size: 2em;
-	}
+}
 
-	.lowerText {
-		padding-bottom: 30px;
-	}
+.subImage {
+	width: 70%;
+	bottom: 10%;
+	left: 0;
+}
+
+.background {
+	width: 30%;
+	position: absolute;
+	height: 50%;
+	top: 0;
+	left: 0;
+	background-color: var(--dark)
+}
+
+
+.link>a {
+	display: inline-block;
+	font-size: 3em;
+	color: white;
+	padding: 0 5%;
+	margin-top: 10px;
+	background-color: var(--dark);
+}
+
+.rightContent {
+	display: flex;
+	flex-flow: column nowrap;
+	color: var(--dark);
+	text-align: right;
+	justify-content: space-evenly;
+}
+
+
+
+.rightContent .subText {
+	font-size: 3em;
+	padding-right: 5%;
+}
+
+.rightContent .mainText {
+	padding-right: 5%;
+	font-size: 6em;
+	background-color: var(--light-black);
+	color: white;
+	font-weight: 600;
 }

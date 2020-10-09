@@ -5,7 +5,7 @@ export default function Jewelries() {
     return (
         <div className={Style.Jewelries}>
             <div className={Style.leftContent}>
-                <img src='https://i.imgur.com/tIT31R4l.jpg' alt='imageCover' />
+                <img src='https://i.imgur.com/2qbIXyR.jpg' alt='imageCover' />
                 {/* <img src='https://i.imgur.com/31yAnh0.jpg' alt='ring' /> */}
                 <img src='https://i.imgur.com/ZpWBK3p.jpg' alt='smt' />
             </div>

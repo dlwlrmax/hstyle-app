@@ -1,0 +1,94 @@
+.Section {
+	display: flex;
+	margin: auto;
+	margin-bottom: 100px;
+	justify-content: space-evenly;
+}
+
+.side {
+	text-align: right;
+	width: 10%;
+}
+
+.side a {
+	color: var(--dark);
+}
+
+.Title {
+	font-size: 2.5em;
+	color: var(--dark);
+	text-transform: uppercase;
+}
+
+.Items {
+	display: flex;
+	justify-content: space-evenly;
+	width: 85%;
+}
+
+.Item {
+	width: 15%;
+	text-align: left;
+}
+
+.Item .image {
+	width: 100%;
+	position: relative;
+}
+
+.like {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 9999;
+	color: var(--dark);
+	opacity: 0.8;
+	font-size: 1.2em;
+}
+
+.Item img {
+	width: 100%;
+	display: block;
+}
+
+.info {
+	margin-top: 15px;
+}
+
+.itemName {
+	font-size: 1.2em;
+	color: var(--light-black);
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.description {
+	font-size: 1em;
+	color: var(--dark);
+}
+
+.price {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.sale {
+	margin-top: 10px;
+}
+
+.sale>span:first-child {
+	padding-right: 10px;
+	font-size: 2em;
+	color: var(--light-black);
+}
+
+.sale>span:last-child {
+	text-decoration: line-through;
+	color: var(--dark);
+}
+
+.percent {
+	padding-bottom: 5px;
+	color: #d72d2d;
+}

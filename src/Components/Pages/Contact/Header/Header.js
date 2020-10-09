@@ -15,7 +15,7 @@ export default function Header() {
             </div>
             <div className={Style.rightContent}>
                 <div className={Style.image}>
-                    <img src='https://i.imgur.com/CDPwm13.jpg' alt='images' />
+                    <img src='https://i.imgur.com/CDPwm13h.jpg' alt='images' />
                 </div>
             </div>
         </div>

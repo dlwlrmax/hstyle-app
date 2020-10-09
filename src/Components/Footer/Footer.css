@@ -29,7 +29,7 @@
 }
 
 .Footer .footer-brand div:first-of-type {
-	font-family: "Lobster";
+	font-family: var(--mainFont);
 	font-style: normal;
 	font-weight: normal;
 	font-size: 3.75em;

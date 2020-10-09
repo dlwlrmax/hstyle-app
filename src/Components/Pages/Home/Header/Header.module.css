@@ -1,73 +1,91 @@
 .Header {
-	width: 80%;
 	height: 91vh;
-	margin: auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.Header>div {
-	width: 30%;
-	display: flex;
-}
-
-.image {
-	width: 50%;
-	margin: 10px;
-}
-
-.leftContent .image:last-child,
-.rightContent .image:first-child {
-	width: 40%;
-	transform: translateY(-5vh)
-}
-
-.image img {
 	width: 100%;
 }
 
-.centerContent {
-	display: flex;
-	justify-content: center;
+.banner {
+	width: 100%;
+	height: 91vh;
+	text-align: left;
 	position: relative;
-	height: 70%;
 }
 
-.centerContent>div {
-	font-size: 8.75em;
-	writing-mode: vertical-lr;
-	font-family: "Lobster";
-	color: var(--light-black);
-	padding: 10px;
+.banner img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: block;
+	object-fit: cover;
+	z-index: -999;
 }
 
-.centerContent>div:first-child {
-	transform: rotate(180deg);
-}
 
-.centerContent img {
+/* .backdrop {
+	width: 100%;
 	height: 100%;
 	position: absolute;
+	background-color: black;
+	opacity: 0.2;
+	z-index: 0;
+} */
+
+.bannerText {
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	color: var(--dark);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	position: relative;
+	z-index: 999;
 }
 
-@media (max-width:1200px) {
-	.Header .leftContent {
-		display: none;
-	}
-
-	.Header .rightContent {
-		width: unset;
-		margin-left: 5%;
-	}
+.textContainer {
+	border-left: 5px solid var(--light-black);
 }
 
-@media (max-width:700px) {
-	.Header {
-		justify-content: center;
-	}
+.textContainer>div {
+	padding-left: 1%;
+}
 
-	.Header .rightContent {
-		display: none
-	}
+.white .textContainer {
+	color: antiquewhite;
+}
+
+.white .textContainer .label {
+	color: antiquewhite;
+}
+
+.label {
+	font-size: 2.5em;
+	color: var(--dark);
+}
+
+.mainText {
+	font-size: 5em;
+	font-weight: 600;
+	background-color: var(--light-black);
+	padding-right: 1%;
+	display: inline;
+	color: white;
+}
+
+.subText {
+	font-size: 3em;
+}
+
+.button {
+	margin-top: 40px;
+}
+
+.btn {
+
+	text-align: left;
+	display: inline;
+	background-color: var(--light-black);
+	color: white;
+	padding: 5px 30px;
+	font-size: 2em;
 }

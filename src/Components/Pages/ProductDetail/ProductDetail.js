@@ -41,7 +41,10 @@ export default function ProductDetail() {
                     </div>
                     <div className={Style.lowerContent}>
                         <div className={Style.price}>$2132</div>
-                        <button className={Style.cartBtn}>Add to cart</button>
+                        <div className={Style.button}>
+                            <button className={Style.cartBtn}>Buy it now</button>
+                            <button className={Style.cartBtn}>Add to cart</button>
+                        </div>
                     </div>
                 </div>
             </div>

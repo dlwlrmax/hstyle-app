@@ -1,34 +1,60 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Style from './Header.module.css';
-import image1 from '../../../../img/71008b98d23ec316b77716c52d851c42.jpg';
-import image2 from '../../../../img/120013138_261788528304275_6889414303221423611_n.jpg';
-import arrow from '../../../../img/arrow.png';
-
+import Slider from '@farbenmeer/react-spring-slider';
 export default function Header() {
     return (
         <div className={Style.Header}>
-            <div className={Style.leftContent}>
-                <div className={Style.image}>
-                    <img src={image1} alt='image1' className='hasShadow' />
+            <Slider hasBullets auto={5000}>
+                <div className={Style.banner}>
+                    <img src='https://i.imgur.com/UYKC1V7.jpg' alt='banner1' />
+                    <div className={Style.backdrop}></div>
+                    <div className={Style.bannerText + ' ' + Style.white}>
+                        <div className={Style.textContainer}>
+                            <div className={Style.label}>New collection available</div>
+                            <div className={Style.mainText}> I J.ESTINA U</div>
+                            <div className={Style.subText}>2020 FW Collection</div>
+                        </div>
+                        <div className={Style.button}>
+                            <Link to='/Shop' className={Style.btn}>
+                                Buy It Now
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                <div className={Style.image}>
-                    <img src={image2} alt='image2' className='hasShadow' />
+                <div className={Style.banner}>
+                    <img src='https://i.imgur.com/oIyPNEV.png' alt='banner1' />
+                    <div className={Style.backdrop}></div>
+                    <div className={Style.bannerText}>
+                        <div className={Style.textContainer}>
+                            <div className={Style.label}>New collection available</div>
+                            <div className={Style.mainText}>IU x H-Style</div>
+                            <div className={Style.subText}>2020 FW Collection</div>
+                        </div>
+                        <div className={Style.button}>
+                            <Link to='/Shop' className={Style.btn}>
+                                Buy It Now
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className={Style.centerContent}>
-                <div className={Style.lefText}>Fashion</div>
-                <img src={arrow} alt='arrow' />
-                <div className={Style.rightText}>Style</div>
-            </div>
-
-            <div className={Style.rightContent}>
-                <div className={Style.image}>
-                    <img src='https://i.imgur.com/f5AY5spl.jpg' alt='image3' className='hasShadow' />
+                <div className={Style.banner}>
+                    <img src='https://i.imgur.com/s2voK9s.jpg' alt='banner1' />
+                    <div className={Style.backdrop}></div>
+                    <div className={Style.bannerText}>
+                        <div className={Style.textContainer}>
+                            <div className={Style.label}>New collection available</div>
+                            <div className={Style.mainText}>VEDI VERO</div>
+                            <div className={Style.subText}>2020 FW Collection</div>
+                        </div>
+                        <div className={Style.button}>
+                            <Link to='/Shop' className={Style.btn}>
+                                Buy It Now
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                <div className={Style.image}>
-                    <img src='https://i.imgur.com/5zjSstul.jpg' alt='image4' className='hasShadow' />
-                </div>
-            </div>
+            </Slider>
         </div>
     );
 }

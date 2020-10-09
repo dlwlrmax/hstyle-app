@@ -14,7 +14,7 @@
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: center;
-	top: 0;
+	top: 50px;
 	left: 0;
 }
 
@@ -102,12 +102,18 @@
 	width: 100%;
 }
 
+.button {
+	display: flex;
+}
+
 .cartBtn {
 	margin-top: 10px;
 	border: none;
 	background-color: var(--dark);
 	color: white;
 	padding: 10px 30px;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 .centerContent {

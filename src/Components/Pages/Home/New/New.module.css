@@ -1,0 +1,85 @@
+.New {
+	width: 90%;
+	margin: auto;
+}
+
+.title {
+	font-size: 4em;
+	margin-top: 100px;
+	color: var(--dark);
+	margin-bottom: 70px;
+}
+
+.Slider {
+	display: flex;
+	justify-content: space-around;
+	height: 70vh;
+}
+
+.Item {
+	width: 80%;
+	text-align: left;
+}
+
+.Item .image {
+	width: 100%;
+	position: relative;
+}
+
+.like {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 9999;
+	color: var(--dark);
+	opacity: 0.8;
+	font-size: 1.2em;
+}
+
+
+.Item img {
+	width: 100%;
+	display: block;
+}
+
+.info {
+	margin-top: 15px;
+}
+
+.itemName {
+	font-size: 1.2em;
+	color: var(--light-black);
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.description {
+	font-size: 1em;
+	color: var(--dark);
+}
+
+.price {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.sale {
+	margin-top: 10px;
+}
+
+.sale>span:first-child {
+	padding-right: 10px;
+	font-size: 2em;
+	color: var(--light-black);
+}
+
+.sale>span:last-child {
+	text-decoration: line-through;
+	color: var(--dark);
+}
+
+.percent {
+	padding-bottom: 5px;
+	color: #d72d2d;
+}
