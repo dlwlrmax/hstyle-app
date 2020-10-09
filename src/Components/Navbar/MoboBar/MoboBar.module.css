@@ -9,9 +9,7 @@
 	right: 0;
 	left: 0;
 	width: 100%;
-	/* lag  */
-	/* filter: drop-shadow(0 2.8px 2.2px rgba(0, 0, 0, 0.056)) drop-shadow(0 6.7px 5.3px rgba(0, 0, 0, 0.081)) drop-shadow(0 6.7px 5.3px rgba(0, 0, 0, 0.081)) drop-shadow(0 22.3px 17.9px rgba(0, 0, 0, 0.119)) drop-shadow(0 22.3px 17.9px rgba(0, 0, 0, 0.119)) drop-shadow(0 100px 80px rgba(0, 0, 0, 0.2)); */
-	filter: drop-shadow(10px 3px 38px rgba(0, 0, 0, 0.75));
+	background-color: rgba(0, 0, 0, 0.747);
 }
 
 .MoboNavbar {

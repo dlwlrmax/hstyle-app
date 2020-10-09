@@ -101,6 +101,7 @@
 	.LeftElements {
 		display: flex;
 		font-size: 2em;
+		color: white;
 	}
 
 	.LeftElements div:hover {
