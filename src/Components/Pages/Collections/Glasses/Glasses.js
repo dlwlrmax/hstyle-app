@@ -7,7 +7,7 @@ export default function Glasses() {
             <div className={Style.background}></div>
             <div className={Style.leftContent}>
                 <div className={Style.mainImage}>
-                    <img src='https://i.imgur.com/zuQ8C0Rh.jpg' alt='iu' />
+                    <img src='https://i.imgur.com/klapufSh.jpg' alt='iu' />
                 </div>
                 {/* <div className={Style.subImage}>
                     <img src='https://i.imgur.com/GPzfGOC.png' alt='glasses' />

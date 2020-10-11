@@ -7,11 +7,17 @@
 
 .side {
 	text-align: right;
-	width: 10%;
+	width: 30%;
 }
 
 .side a {
 	color: var(--dark);
+	width: 100%;
+}
+
+.side img {
+	width: 100%;
+	display: block;
 }
 
 .Title {
@@ -23,7 +29,7 @@
 .Items {
 	display: flex;
 	justify-content: space-evenly;
-	width: 85%;
+	width: 65%;
 }
 
 .Item {

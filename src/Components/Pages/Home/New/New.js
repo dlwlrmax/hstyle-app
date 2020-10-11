@@ -1,35 +1,47 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Style from './New.module.css';
 import { useSpring, animated } from 'react-spring';
-import { faHeart as emptyHeart } from '@fortawesome/free-regular-svg-icons';
+import { faEye, faHeart as emptyHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@farbenmeer/react-spring-slider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const Items = [
-    'https://i.imgur.com/5zjSstuh.jpg',
-    'https://i.imgur.com/x1EOLPxh.png',
-    'https://i.imgur.com/PNNDaA3h.jpg',
-    'https://i.imgur.com/hMIrzQvh.png',
-    'https://i.imgur.com/2qbIXyRh.jpg',
-    'https://i.imgur.com/vCGdjkJh.jpg',
-    'https://i.imgur.com/k3KAZM6h.jpg',
-    'https://i.imgur.com/ko2tpyhh.jpg',
-];
+import Image from '../../EX-Collections/Items/Image/Image';
 
 export default function New() {
+    const [Items, setItems] = useState([]);
+    useEffect(() => {
+        async function getData() {
+            const res = await fetch('https://h-style-data.herokuapp.com/products?sort=date&&order=desc%&&_page=1&_limit=10');
+            const data = await res.json();
+            console.log(data);
+            setItems(data);
+        }
+
+        getData();
+    }, []);
+    const empHeart = <FontAwesomeIcon icon={emptyHeart} />;
+    const fulHeart = <FontAwesomeIcon style={{ color: '#d72d2d' }} icon={fullHeart} />;
+
     const props = useSpring({
         opacity: 1,
         from: { opacity: 0 },
     });
-    const ref = useRef(null);
 
-    const heartIcon = <FontAwesomeIcon icon={emptyHeart} />;
-    const fullHeartIcon = <FontAwesomeIcon icon={fullHeart} />;
-    const changeHeart = e => {
-        console.log(e.target.value);
-        e.target.value = fullHeartIcon;
+    const formatNumb = numb => {
+        return Intl.NumberFormat().format(numb);
     };
+
+    const addItemToFav = id => {
+        const currIndex = Items.findIndex(item => item.id === id);
+        let newItems = [...Items];
+        newItems[currIndex].isFav = !newItems[currIndex].isFav;
+        setItems(newItems);
+    };
+
+    const viewItem = id => {
+        //
+    };
+
     return (
         <div className={Style.New}>
             <animated.div style={props} className={Style.title}>
@@ -42,20 +54,26 @@ export default function New() {
                         return (
                             <div className={Style.Item} key={index}>
                                 <div className={Style.image}>
-                                    <img src={item} alt='dim' />
-                                    <div className={Style.like} ref={ref} onClick={changeHeart}>
-                                        {heartIcon}
+                                    <img src={item.thumb} alt='dim' />
+                                    <div className={Style.like} onClick={() => addItemToFav(item.id)}>
+                                        {item.isFav ? fulHeart : empHeart}
+                                    </div>{' '}
+                                    <div className={Style.view}>
+                                        <FontAwesomeIcon icon={faEye} />
+                                    </div>
+                                    <div className={Style.hover}>
+                                        <Image image={item.image[1]} />
                                     </div>
                                 </div>
                                 <div className={Style.info}>
-                                    <div className={Style.itemName}>Goache</div>
-                                    <div className={Style.description}>Lorem ipsum dolor sit amet consectetur</div>
+                                    <div className={Style.itemName}>{item.name}</div>
+                                    <div className={Style.description}>{item.desc}</div>
                                     <div className={Style.price}>
                                         <div className={Style.sale}>
-                                            <span>2032</span>
-                                            <span className={Style.fullPrice}>2222</span>
+                                            <span>{formatNumb((item.price * item.sale) / 100)}</span>
+                                            <span className={Style.fullPrice}>{formatNumb(item.price)}</span>
                                         </div>
-                                        <div className={Style.percent}>10%</div>
+                                        <div className={Style.percent}>{item.sale}%</div>
                                     </div>
                                 </div>
                             </div>

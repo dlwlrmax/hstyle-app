@@ -3,8 +3,9 @@ import Style from './Image.module.css';
 
 let zoomWidth = 0;
 let zoomHeight = 0;
-
-let zoomLevel = 3;
+let offX = 0;
+let offY = 0;
+let zoomLevel = 2;
 export default function Image({ image }) {
     const [isHidden, setZoomState] = useState('');
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -12,6 +13,7 @@ export default function Image({ image }) {
 
     const getMousePos = e => {
         setMousePos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+        console.log(offX, offY);
     };
 
     const resetCursor = () => {
@@ -22,6 +24,8 @@ export default function Image({ image }) {
         setZoomState('show');
         zoomWidth = imageSource.current.offsetWidth * zoomLevel;
         zoomHeight = imageSource.current.offsetHeight * zoomLevel;
+        offX = 50 - 5;
+        offY = 50 + 10;
     };
 
     let zoom = {
@@ -29,8 +33,8 @@ export default function Image({ image }) {
         left: mousePos.x,
         backgroundImage: 'url(' + image + ')',
         backgroundRepeat: 'no-repeat',
-        backgroundPositionX: -mousePos.x * zoomLevel + 50,
-        backgroundPositionY: -mousePos.y * zoomLevel + 50,
+        backgroundPositionX: -mousePos.x * zoomLevel + offX,
+        backgroundPositionY: -mousePos.y * zoomLevel + offY,
         backgroundSize: `${zoomWidth}px ${zoomHeight}px`,
     };
     return (

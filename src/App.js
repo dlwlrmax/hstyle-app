@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Loading from './Components/Loading/Loading';
+import React from 'react';
+//import Loading from './Components/Loading/Loading';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
 
@@ -13,15 +13,9 @@ import Collections from './Components/Pages/Collections/Collections';
 import ProductDetail from './Components/Pages/ProductDetail/ProductDetail';
 
 function App() {
-    const [isLoading, setLoading] = useState(true);
-    useEffect(() => {
-        setLoading(false);
-    }, []);
-
     return (
         <div className='App'>
             <Router>
-                {isLoading ? <Loading /> : null}
                 <Navbar />
                 <Switch>
                     <Route path='/shop'>

@@ -8,9 +8,9 @@ export default function Section({ images, title }) {
     return (
         <div className={Style.Section}>
             <div className={Style.side}>
-                {' '}
-                <div className={Style.Title}>{title}</div>
-                <Link to='/shop'>More {'>'}</Link>
+                <Link to='/shop'>
+                    <img src='https://i.imgur.com/oNbs1Wo.jpg' alt='images' />
+                </Link>
             </div>
             <div className={Style.Items}>
                 {images.map((image, index) => {
