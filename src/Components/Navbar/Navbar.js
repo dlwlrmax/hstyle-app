@@ -12,12 +12,10 @@ const Navbar = () => {
 
     const onWidthChange = () => {
         setBrowserWidth(window.innerWidth);
-        //console.log(browserWidth);
     };
 
     const openSidebar = () => {
         setSideBar(value => !value);
-        //console.log(isSidebarOpened);
     };
 
     const closeNavHandler = () => {

@@ -120,11 +120,6 @@
 		width: 25%;
 	}
 
-	.Item:last-child {
-		display: none;
-
-	}
-
 	.itemName {
 		font-size: 1.5em;
 	}

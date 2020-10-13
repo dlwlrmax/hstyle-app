@@ -7,6 +7,7 @@ import Style from './Section.module.css';
 export default function Section({ title }) {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
     const [data, setData] = useState([]);
+    let limit = 4;
     useEffect(() => {
         window.addEventListener('resize', changeWidth);
         changeWidth();
@@ -14,18 +15,24 @@ export default function Section({ title }) {
     });
     const changeWidth = () => {
         setBrowserWidth(window.innerWidth);
-        console.log(browserWidth);
+        changeDataLimit();
     };
-
+    const changeDataLimit = () => {
+        if (browserWidth <= 1400) {
+            limit = 3;
+        } else {
+            limit = 4;
+        }
+    };
     useEffect(() => {
         async function getData() {
-            const res = await fetch(`https://h-style-data.herokuapp.com/products?sort=date&&order=desc%&&_page=1&_limit=4&&q=${title}`);
+            const res = await fetch(`https://h-style-data.herokuapp.com/products?sort=date&&order=desc%&&_page=1&_limit=${limit}&&q=${title}`);
             const data = await res.json();
             console.log(data);
             setData(data);
         }
         getData();
-    }, [title]);
+    }, [title, limit]);
     return (
         <div className={Style.Section}>
             <div className={Style.side}>
