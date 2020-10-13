@@ -85,6 +85,11 @@
 	}
 }
 
+@media(max-width:1368px) {
+	.navContainer {
+		height: 75px;
+	}
+}
 
 @media (max-width:1200px) {
 	.navContainer {

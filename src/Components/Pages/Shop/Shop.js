@@ -16,7 +16,7 @@ export default function Shop() {
     const [Items, setItems] = useState([]);
     useEffect(() => {
         async function getData() {
-            const res = await fetch('https://h-style-data.herokuapp.com/products?sort=date&&order=desc%&&_page=1&_limit=10');
+            const res = await fetch('https://h-style-data.herokuapp.com/products?sort=date&&order=desc%&&_page=1&_limit=15');
             const data = await res.json();
             console.log(data);
             setItems(data);
@@ -62,7 +62,7 @@ export default function Shop() {
                                             <FontAwesomeIcon icon={faEye} />
                                         </div>
                                         <div className={Style.hover}>
-                                            <img src={item.image[1]} />
+                                            <img src={item.image[1]} alt='nt' />
                                         </div>
                                     </div>
                                     <div className={Style.info}>
@@ -70,7 +70,7 @@ export default function Shop() {
                                         <div className={Style.description}>{item.desc}</div>
                                         <div className={Style.price}>
                                             <div className={Style.sale}>
-                                                <span>{formatNumb((item.price * item.sale) / 100)}</span>
+                                                <span>{formatNumb((item.price * (100 - item.sale)) / 100)}</span>
                                                 <span className={Style.fullPrice}>{formatNumb(item.price)}</span>
                                             </div>
                                             <div className={Style.percent}>{item.sale}%</div>
