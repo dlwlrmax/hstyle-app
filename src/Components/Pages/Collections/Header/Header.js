@@ -17,7 +17,7 @@ export default function Header() {
             </div>
             <div className={Style.centerContent}>
                 <div className={Style.lefText}>Collection</div>
-                <img src={arrow} alt='arrow' />
+                <img src={arrow} alt='arrow' className={Style.arrow} />
                 <div className={Style.rightText}>Style</div>
             </div>
 

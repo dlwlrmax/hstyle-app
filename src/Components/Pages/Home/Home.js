@@ -6,12 +6,16 @@ import Hot from './Hot/Hot';
 import Collections from './Collections/Collections';
 const Home = () => {
     document.title = 'HStyle';
+    const formatNumb = numb => {
+        return Intl.NumberFormat().format(numb);
+    };
+
     return (
         <div className='Home'>
             <Header />
-            <New />
+            <New formatNumb={formatNumb} />
             <Collections />
-            <Hot />
+            <Hot formatNumb={formatNumb} />
             <Footer />
         </div>
     );

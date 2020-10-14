@@ -36,6 +36,11 @@
 	font-weight: 600;
 }
 
+.side img {
+	width: 100%;
+	height: 100%;
+}
+
 .Title {
 	font-size: 2.5em;
 	color: var(--dark);
@@ -49,7 +54,7 @@
 }
 
 .Item {
-	width: 15%;
+	width: 20%;
 	text-align: left;
 }
 
@@ -78,14 +83,15 @@
 }
 
 .itemName {
-	font-size: 1.2em;
+	font-size: 1.4em;
 	color: var(--light-black);
 	font-weight: 600;
 	line-height: 1.5;
+	padding-bottom: 15px;
 }
 
 .description {
-	font-size: 1em;
+	font-size: 0.9em;
 	color: var(--dark);
 }
 
@@ -93,6 +99,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
+	padding-top: 10px;
 }
 
 .sale {

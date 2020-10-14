@@ -5,10 +5,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faSearch, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import MoboBar from './MoboBar/MoboBar';
 
-const Navbar = () => {
+const Navbar = ({ cartId }) => {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
 
     const [isSidebarOpened, setSideBar] = useState(false);
+    const [totalItem, setTotalItem] = useState(0);
+
+    useEffect(() => {
+        async function getCart() {
+            const res = await fetch('https://h-style-data.herokuapp.com/cart');
+            const data = await res.json();
+            setTotalItem(data.length);
+        }
+        getCart();
+    }, [cartId]);
 
     const onWidthChange = () => {
         setBrowserWidth(window.innerWidth);
@@ -53,7 +63,7 @@ const Navbar = () => {
                     <FontAwesomeIcon icon={faSearch} />
                 </li>
                 <li className={Style.Cart}>
-                    <FontAwesomeIcon icon={faShoppingCart} />
+                    <FontAwesomeIcon icon={faShoppingCart} /> <span>{totalItem}</span>
                 </li>
                 <li className={Style.SignIn}>
                     <FontAwesomeIcon icon={faSignInAlt} />
@@ -78,6 +88,7 @@ const Navbar = () => {
             <ul className={Style.IconBar}>
                 <li className={Style.Cart}>
                     <FontAwesomeIcon icon={faShoppingCart} />
+                    <span>{totalItem}</span>
                 </li>
                 <li className={Style.SignIn}>
                     <FontAwesomeIcon icon={faSignInAlt} />

@@ -16,7 +16,7 @@ export default function Jewelries() {
                     <div className={Style.subText}> spot.</div>
                 </div>
                 <div className={Style.link}>
-                    <Link to='/collections'>Collections</Link>
+                    <Link to='/jestina'>Collections</Link>
                     <br />
                     <Link to='Shop'>Shop</Link>
                 </div>

@@ -66,7 +66,17 @@
 	padding: 0px 15px;
 }
 
-.IconBar li:hover {
+.Cart {
+	position: relative;
+}
+
+.Cart span {
+	position: absolute;
+	bottom: -50%;
+	right: 0;
+}
+
+.cart .IconBar li:hover {
 	cursor: pointer;
 }
 

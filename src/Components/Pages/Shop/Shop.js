@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Style from './Shop.module.css';
 import Masonry from 'react-masonry-component';
 import Sidebar from './Sidebar/Sidebar';
-import { faEye, faHeart as emptyHeart } from '@fortawesome/free-regular-svg-icons';
-import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Card from '../Home/New/Card/Card';
 
-export default function Shop() {
+export default function Shop({ getCartId }) {
     document.title = 'Shop';
     const masonryOptions = {
         transition: 0.5,
@@ -29,13 +27,24 @@ export default function Shop() {
     };
 
     const addItemToFav = id => {
+        getCartId(id);
         const currIndex = Items.findIndex(item => item.id === id);
         let newItems = [...Items];
         newItems[currIndex].isFav = !newItems[currIndex].isFav;
         setItems(newItems);
+        fetch('https://h-style-data.herokuapp.com/cart', {
+            method: 'post',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+
+            //make sure to serialize your JSON body
+            body: JSON.stringify(newItems[currIndex]),
+        }).then(response => {
+            //do something awesome that makes the world a better place
+        });
     };
-    const empHeart = <FontAwesomeIcon icon={emptyHeart} />;
-    const fulHeart = <FontAwesomeIcon style={{ color: '#d72d2d' }} icon={fullHeart} />;
     return (
         <div className={Style.Shop}>
             <div className={Style.Title}>Our Product</div>
@@ -53,29 +62,7 @@ export default function Shop() {
                         {Items.map((item, index) => {
                             return (
                                 <div className={Style.Item} key={index}>
-                                    <div className={Style.image}>
-                                        <img src={item.thumb} alt='dim' />
-                                        <div className={Style.like} onClick={() => addItemToFav(item.id)}>
-                                            {item.isFav ? fulHeart : empHeart}
-                                        </div>{' '}
-                                        <div className={Style.view}>
-                                            <FontAwesomeIcon icon={faEye} />
-                                        </div>
-                                        <div className={Style.hover}>
-                                            <img src={item.image[1]} alt='nt' />
-                                        </div>
-                                    </div>
-                                    <div className={Style.info}>
-                                        <div className={Style.itemName}>{item.name}</div>
-                                        <div className={Style.description}>{item.desc}</div>
-                                        <div className={Style.price}>
-                                            <div className={Style.sale}>
-                                                <span>{formatNumb((item.price * (100 - item.sale)) / 100)}</span>
-                                                <span className={Style.fullPrice}>{formatNumb(item.price)}</span>
-                                            </div>
-                                            <div className={Style.percent}>{item.sale}%</div>
-                                        </div>
-                                    </div>
+                                    <Card key={index} item={item} addItemToFav={addItemToFav} formatNumb={formatNumb} />
                                 </div>
                             );
                         })}

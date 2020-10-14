@@ -27,7 +27,7 @@
 .Item {
 	text-align: left;
 	margin-bottom: 30px;
-	width: calc(20% - 10px);
+	width: 20%;
 }
 
 .Item .image {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import Loading from './Components/Loading/Loading';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css';
@@ -11,15 +11,23 @@ import About from './Components/Pages/About/About';
 import Contact from './Components/Pages/Contact/Contact';
 import Collections from './Components/Pages/Collections/Collections';
 import ProductDetail from './Components/Pages/ProductDetail/ProductDetail';
+import CollectionsPage from './Components/Pages/Collections/Jewelries/CollectionsPage/CollectionsPage';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 function App() {
+    const [cartId, setCartId] = useState('');
+    const getCartId = id => {
+        setCartId(id);
+        console.log(id);
+    };
     return (
         <div className='App'>
             <Router>
-                <Navbar />
+                <ScrollToTop />
+                <Navbar cartId={cartId} />
                 <Switch>
                     <Route path='/shop'>
-                        <Shop />
+                        <Shop getCartId={getCartId} />
                     </Route>
                     <Route path='/about'>
                         <About />
@@ -32,6 +40,9 @@ function App() {
                     </Route>
                     <Route path='/product'>
                         <ProductDetail />
+                    </Route>
+                    <Route path='/jestina'>
+                        <CollectionsPage />
                     </Route>
                     <Route path='/'>
                         <Home />

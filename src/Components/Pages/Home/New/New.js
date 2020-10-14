@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Style from './New.module.css';
-import { useSpring, animated } from 'react-spring';
 import Slider from '@farbenmeer/react-spring-slider';
-import Item from './Item/Item';
+import Card from './Card/Card';
 
-export default function New() {
+export default function New({ formatNumb }) {
     const [Items, setItems] = useState([]);
     const [isLoading, setLoading] = useState(true);
+
+    const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
+    const onWidthChange = () => {
+        setBrowserWidth(window.innerWidth);
+    };
+    useEffect(() => {
+        window.addEventListener('resize', onWidthChange);
+        onWidthChange();
+        return () => window.removeEventListener('resize', onWidthChange);
+    });
 
     useEffect(() => {
         async function getData() {
@@ -20,15 +29,6 @@ export default function New() {
         getData();
     }, []);
 
-    const props = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
-    });
-
-    const formatNumb = numb => {
-        return Intl.NumberFormat().format(numb);
-    };
-
     const addItemToFav = id => {
         const currIndex = Items.findIndex(item => item.id === id);
         let newItems = [...Items];
@@ -40,31 +40,22 @@ export default function New() {
         <div>Loading</div>
     ) : (
         <div className={Style.New}>
-            <animated.div style={props} className={Style.title}>
-                What's New?
-            </animated.div>
+            <div className={Style.title}>What's New?</div>
 
             <div className={Style.Slider}>
-                <Slider hasArrows activeIndex={0} slidesAtOnce={5}>
-                    {Items.map((item, index) => {
-                        return (
-                            <div className={Style.Item} key={index}>
-                                <Item item={item} addItemToFav={addItemToFav} />
-                                <div className={Style.info}>
-                                    <div className={Style.itemName}>{item.name}</div>
-                                    <div className={Style.description}>{item.desc}</div>
-                                    <div className={Style.price}>
-                                        <div className={Style.sale}>
-                                            <span>{formatNumb((item.price * (100 - item.sale)) / 100)}</span>
-                                            <span className={Style.fullPrice}>{formatNumb(item.price)}</span>
-                                        </div>
-                                        <div className={Style.percent}>{item.sale}%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </Slider>
+                {browserWidth < 600 ? (
+                    <Slider hasBullets activeIndex={0} slidesAtOnce={2}>
+                        {Items.map((item, index) => {
+                            return <Card key={index} item={item} addItemToFav={addItemToFav} formatNumb={formatNumb} />;
+                        })}
+                    </Slider>
+                ) : (
+                    <Slider hasArrows activeIndex={0} slidesAtOnce={5}>
+                        {Items.map((item, index) => {
+                            return <Card key={index} item={item} addItemToFav={addItemToFav} formatNumb={formatNumb} />;
+                        })}
+                    </Slider>
+                )}
             </div>
         </div>
     );

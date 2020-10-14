@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Style from './Collections.module.css';
 export default function Collections() {
     return (
@@ -13,14 +14,14 @@ export default function Collections() {
                         <img src='https://i.imgur.com/rdOM1F7h.png' alt='an' />
                     </div>
                 </div>
-                <div className={Style.Item}>
+                <Link to='/jestina' className={Style.Item}>
                     <div className={Style.text}>J.estina</div>
 
                     <div className={Style.image}>
                         <div className={Style.dropShadow}></div>
                         <img src='https://i.imgur.com/QjNXLieh.jpg' alt='an' />
                     </div>
-                </div>
+                </Link>
                 <div className={Style.Item}>
                     <div className={Style.text}>Vedi Vero</div>
 
