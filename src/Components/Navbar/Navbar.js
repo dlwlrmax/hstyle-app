@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faSearch, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import MoboBar from './MoboBar/MoboBar';
 
-const Navbar = ({ cart, isCartVisible, showCart }) => {
+const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
 
     const [isSidebarOpened, setSideBar] = useState(false);
@@ -34,7 +34,7 @@ const Navbar = ({ cart, isCartVisible, showCart }) => {
     });
 
     const desktopNav = (
-        <div className={Style.navContainer}>
+        <div className={isScrollUp || isCartVisible ? Style.navContainerStick : Style.navContainer}>
             <ul className={Style.Navbar}>
                 <li className={Style.navLinkContainer}>
                     <Link to='/collections'>Collections</Link>

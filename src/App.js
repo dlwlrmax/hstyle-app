@@ -18,6 +18,26 @@ import Cart from './Components/Cart/Cart';
 function App() {
     const [Items, setItems] = useState([]);
     const [isCartVisible, setCartVisible] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isScrollUp, setScrollUp] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const position = window.scrollY;
+            if (scrollPosition > position) {
+                setScrollUp(true);
+            } else {
+                setScrollUp(false);
+            }
+            setScrollPosition(position);
+            console.log(scrollPosition);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrollPosition]);
 
     useEffect(() => {
         async function getData() {
@@ -50,7 +70,7 @@ function App() {
         setNewProduct(_newProduct);
     };
 
-    const showCart = () => {
+    const toggleCart = () => {
         setCartVisible(value => !value);
     };
 
@@ -74,6 +94,10 @@ function App() {
         } else {
             removeItem(id);
         }
+        setScrollUp(true);
+        setTimeout(() => {
+            setScrollUp(false);
+        }, 1000);
     };
     const addItem = item => {
         fetch(`https://h-style-data.herokuapp.com/cart`, {
@@ -95,26 +119,38 @@ function App() {
         })
             .then(response => response.json())
             .then(json => console.log(json));
+        fetch(`https://h-style-data.herokuapp.com/products/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ isFav: false }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        });
         let _cart = [...cart];
         const deleteIndex = _cart.findIndex(item => item.id === id);
-        for (let item of Items) {
+        let _Items = [...Items];
+        for (let item of _Items) {
             if (item.id === id) {
                 item.isFav = false;
             }
         }
         _cart.splice(deleteIndex, 1);
         setCart(_cart);
+        setItems(_Items);
+    };
+    const formatNumb = numb => {
+        return Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(numb);
     };
 
     return (
         <div className='App'>
             <Router>
                 <ScrollToTop />
-                <Navbar Items={Items} cart={cart} showCart={showCart} isCartVisible={isCartVisible} />
-                {isCartVisible ? <Cart cart={cart} removeItem={removeItem} /> : null}
+                <Navbar Items={Items} cart={cart} showCart={toggleCart} isCartVisible={isCartVisible} isScrollUp={isScrollUp} />
+                {isCartVisible ? <Cart cart={cart} removeItem={removeItem} formatNumb={formatNumb} toggleCart={toggleCart} /> : null}
                 <Switch>
                     <Route path='/shop'>
-                        <Shop addItemToFav={addItemToFav} Items={Items} />
+                        <Shop addItemToFav={addItemToFav} Items={Items} formatNumb={formatNumb} />
                     </Route>
                     <Route path='/about'>
                         <About />
@@ -129,9 +165,9 @@ function App() {
                         <CollectionsPage />
                     </Route>
                     <Route path='/' exact>
-                        <Home addItemToFav={addItemToFav} newItems={newProduct} Items={Items} />
+                        <Home addItemToFav={addItemToFav} newItems={newProduct} Items={Items} formatNumb={formatNumb} />
                     </Route>
-                    <Route path='/v/:id' render={props => <QuickView {...props} addItemToFav={addItemToFav} />}></Route>
+                    <Route path='/v/:id' render={props => <QuickView {...props} addItemToFav={addItemToFav} formatNumb={formatNumb} />}></Route>
                 </Switch>
             </Router>
         </div>

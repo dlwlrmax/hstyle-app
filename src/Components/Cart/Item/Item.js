@@ -1,6 +1,8 @@
+import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import Style from './Item.module.css';
-export default function Item({ item, removeItem }) {
+export default function Item({ item, removeItem, formatNumb }) {
     const [quantity, setQuantity] = useState(1);
     const updatePrice = e => {
         setQuantity(e.target.value);
@@ -27,18 +29,25 @@ export default function Item({ item, removeItem }) {
             <div className={Style.cartContent}>
                 <div className={Style.itemInfo}>
                     <div className={Style.name}>{item.name}</div>
-                    <div className={Style.price}>{(item.price * (100 - item.sale)) / 100}</div>
                 </div>
                 <div className={Style.priceContainer}>
+                    <div className={Style.price}>{formatNumb((item.price * (100 - item.sale)) / 100)}</div>
                     <div className={Style.input}>
-                        <button onClick={decCount}>-</button>
+                        <button className={Style.btn} onClick={decCount}>
+                            -
+                        </button>
                         <input type='Number' className={Style.quantity} value={quantity} onChange={updatePrice} />
-                        <button onClick={incCount}>+</button>
+                        <button className={Style.btn} onClick={incCount}>
+                            +
+                        </button>
                     </div>
-                    <div className={Style.totalPrice}>{((item.price * (100 - item.sale)) / 100) * quantity}</div>
+                    <div className={Style.totalPrice}>{formatNumb(((item.price * (100 - item.sale)) / 100) * quantity)}</div>
                 </div>
             </div>
-            <button onClick={() => removeItem(item.id)}>remove</button>
+            <div className={Style.remove}>
+                {' '}
+                <FontAwesomeIcon icon={faMinusCircle} onClick={() => removeItem(item.id)} />
+            </div>
         </div>
     );
 }
