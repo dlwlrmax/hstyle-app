@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Style from './QuickView.module.css';
-export default function QuickView({ match, addItemToFav }) {
+export default function QuickView({ match, addItemToFav, cart }) {
     const [data, setData] = useState([]);
+    const [isExit, setEx] = useState(false);
 
     useEffect(() => {
         console.log(match);
@@ -10,19 +12,28 @@ export default function QuickView({ match, addItemToFav }) {
             const res = await fetch(`https://h-style-data.herokuapp.com/products/${match.params.id}`);
             const data = await res.json();
             setData(data);
-
             console.log(data.image[1]);
         };
         getData();
-    }, [match]);
-
+    }, [match, cart]);
+    useEffect(() => {
+        const itemIndex = cart.findIndex(item => item.id === data.id);
+        if (itemIndex < 0) {
+            setEx(false);
+        } else {
+            setEx(true);
+        }
+    }, [cart, data]);
     const [currentImage, setCurrentImage] = useState(0);
 
     return (
         <div className={Style.ProductDetail}>
             <div className={Style.goBack}>
                 <div className={Style.line}></div>
-                <div className={Style.backBtn}> Back To Shopping</div>
+                <Link to='/' className={Style.backBtn}>
+                    {' '}
+                    Back To Shopping
+                </Link>
             </div>
             <div className={Style.Content}>
                 {data.image ? (
@@ -60,7 +71,7 @@ export default function QuickView({ match, addItemToFav }) {
                         <div className={Style.button}>
                             <button className={Style.cartBtn}>Buy it now</button>
                             <button className={Style.cartBtn} onClick={() => addItemToFav(match.params.id)}>
-                                Add to cart
+                                {isExit ? <div>Remove from cart</div> : <div>Add to cart</div>}
                             </button>
                         </div>
                     </div>

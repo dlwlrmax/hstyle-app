@@ -6,12 +6,14 @@ import Section from './Section/Section';
 import Product from './Section/Products/Products';
 import SAbout from './Section/About/About';
 import Footer from '../../Footer/Footer';
+import ScrollToTop from '../../ScrollToTop/ScrollToTop';
 
 const About = () => {
     document.title = 'About';
 
     return (
         <div className='About'>
+            <ScrollToTop />
             <Header />
             <Section
                 sectionTitle='H-STYLE'

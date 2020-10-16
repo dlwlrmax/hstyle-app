@@ -6,8 +6,6 @@ export default function Sidebar({ Items, getFilter }) {
     const [glasses, setGlasses] = useState(0);
     const [jewelry, setJewelry] = useState(0);
 
-    const [selectedInput, setSelectedInput] = useState('none');
-
     useEffect(() => {
         getTotalClothes();
         getTotalGlasses();
@@ -26,6 +24,7 @@ export default function Sidebar({ Items, getFilter }) {
         const _jewelry = Items.filter(item => item.category === 'jewelry');
         setJewelry(_jewelry.length);
     };
+    const [selectedInput, setSelectedInput] = useState('all');
 
     const changeInput = e => {
         setSelectedInput(e.target.value);

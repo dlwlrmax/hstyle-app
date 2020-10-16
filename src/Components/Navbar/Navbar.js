@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faSearch, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import MoboBar from './MoboBar/MoboBar';
+import { useSpring, animated } from 'react-spring';
 
 const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
-
     const [isSidebarOpened, setSideBar] = useState(false);
     const [totalItem, setTotalItem] = useState(0);
 
     useEffect(() => {
-        setTotalItem(cart.length);
+        const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+        setTotalItem(total);
     }, [cart]);
 
     const onWidthChange = () => {
@@ -33,8 +34,11 @@ const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
         return () => window.removeEventListener('resize', onWidthChange);
     });
 
+    //animation
+    const showNav = useSpring({ top: isScrollUp || isCartVisible ? 0 : -100 });
+
     const desktopNav = (
-        <div className={isScrollUp || isCartVisible ? Style.navContainerStick : Style.navContainer}>
+        <animated.div style={showNav} className={isScrollUp || isCartVisible ? Style.navContainerStick : Style.navContainer}>
             <ul className={Style.Navbar}>
                 <li className={Style.navLinkContainer}>
                     <Link to='/collections'>Collections</Link>
@@ -64,7 +68,7 @@ const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
                     <FontAwesomeIcon icon={faSignInAlt} />
                 </li>
             </ul>
-        </div>
+        </animated.div>
     );
 
     const MoboNav = (

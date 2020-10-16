@@ -11,15 +11,15 @@ import About from './Components/Pages/About/About';
 import Contact from './Components/Pages/Contact/Contact';
 import Collections from './Components/Pages/Collections/Collections';
 import CollectionsPage from './Components/Pages/Collections/Jewelries/CollectionsPage/CollectionsPage';
-import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import QuickView from './Components/Pages/QuickView/QuickView';
 import Cart from './Components/Cart/Cart';
-
+//import { useSpring, animated } from 'react-spring';
 function App() {
     const [Items, setItems] = useState([]);
     const [isCartVisible, setCartVisible] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isScrollUp, setScrollUp] = useState(false);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -100,6 +100,7 @@ function App() {
         }, 1000);
     };
     const addItem = item => {
+        item.quantity = 1;
         fetch(`https://h-style-data.herokuapp.com/cart`, {
             method: 'POST',
             body: JSON.stringify(item),
@@ -142,13 +143,75 @@ function App() {
         return Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(numb);
     };
 
+    //quantity
+    const updateAPIQuantity = ({ id }, quantity) => {
+        fetch(`https://h-style-data.herokuapp.com/cart/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ quantity: quantity }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        });
+    };
+
+    const updatePrice = (e, item) => {
+        let _cart = [...cart];
+        for (let cartItem of _cart) {
+            if (cartItem.id === item.id) {
+                cartItem.quantity = Number(e.target.value);
+            }
+        }
+        setCart(_cart);
+        updateAPIQuantity(item, e.target.value);
+    };
+    const incCount = item => {
+        let _quantity = item.quantity;
+        _quantity++;
+        let _cart = [...cart];
+        for (let cartItem of _cart) {
+            if (cartItem.id === item.id) {
+                cartItem.quantity = _quantity;
+            }
+        }
+        setCart(_cart);
+        updateAPIQuantity(item, _quantity);
+    };
+    const decCount = item => {
+        let _quantity = item.quantity;
+        if (_quantity === 1) {
+            return;
+        }
+        _quantity--;
+        let _cart = [...cart];
+        for (let cartItem of _cart) {
+            if (cartItem.id === item.id) {
+                cartItem.quantity = _quantity;
+            }
+        }
+        setCart(_cart);
+        updateAPIQuantity(item, _quantity);
+    };
+
     return (
         <div className='App'>
             <Router>
-                <ScrollToTop />
                 <Navbar Items={Items} cart={cart} showCart={toggleCart} isCartVisible={isCartVisible} isScrollUp={isScrollUp} />
-                {isCartVisible ? <Cart cart={cart} removeItem={removeItem} formatNumb={formatNumb} toggleCart={toggleCart} /> : null}
+                {isCartVisible ? (
+                    <Cart
+                        cart={cart}
+                        removeItem={removeItem}
+                        formatNumb={formatNumb}
+                        toggleCart={toggleCart}
+                        incCount={incCount}
+                        decCount={decCount}
+                        updatePrice={updatePrice}
+                    />
+                ) : null}
                 <Switch>
+                    <Route
+                        path='/v/:id'
+                        render={props => <QuickView {...props} addItemToFav={addItemToFav} formatNumb={formatNumb} cart={cart} />}></Route>
+
                     <Route path='/shop'>
                         <Shop addItemToFav={addItemToFav} Items={Items} formatNumb={formatNumb} />
                     </Route>
@@ -167,7 +230,6 @@ function App() {
                     <Route path='/' exact>
                         <Home addItemToFav={addItemToFav} newItems={newProduct} Items={Items} formatNumb={formatNumb} />
                     </Route>
-                    <Route path='/v/:id' render={props => <QuickView {...props} addItemToFav={addItemToFav} formatNumb={formatNumb} />}></Route>
                 </Switch>
             </Router>
         </div>
