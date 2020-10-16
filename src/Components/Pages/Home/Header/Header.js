@@ -23,7 +23,7 @@ export default function Header() {
                     </div>
                 </div>
                 <div className={Style.banner}>
-                    <img src='https://i.imgur.com/oIyPNEV.png' alt='banner1' />
+                    <img src='https://i.imgur.com/FcJojsm.jpg' alt='banner1' />
                     <div className={Style.backdrop}></div>
                     <div className={Style.bannerText}>
                         <div className={Style.textContainer}>

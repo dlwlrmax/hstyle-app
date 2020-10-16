@@ -5,20 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faSearch, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import MoboBar from './MoboBar/MoboBar';
 
-const Navbar = ({ cartId }) => {
+const Navbar = ({ cart, isCartVisible, showCart }) => {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
 
     const [isSidebarOpened, setSideBar] = useState(false);
     const [totalItem, setTotalItem] = useState(0);
 
     useEffect(() => {
-        async function getCart() {
-            const res = await fetch('https://h-style-data.herokuapp.com/cart');
-            const data = await res.json();
-            setTotalItem(data.length);
-        }
-        getCart();
-    }, [cartId]);
+        setTotalItem(cart.length);
+    }, [cart]);
 
     const onWidthChange = () => {
         setBrowserWidth(window.innerWidth);
@@ -62,7 +57,7 @@ const Navbar = ({ cartId }) => {
                 <li className={Style.Search}>
                     <FontAwesomeIcon icon={faSearch} />
                 </li>
-                <li className={Style.Cart}>
+                <li className={Style.Cart} onClick={showCart}>
                     <FontAwesomeIcon icon={faShoppingCart} /> <span>{totalItem}</span>
                 </li>
                 <li className={Style.SignIn}>
@@ -86,7 +81,7 @@ const Navbar = ({ cartId }) => {
                 <Link to='/'>H-STYLE</Link>
             </div>
             <ul className={Style.IconBar}>
-                <li className={Style.Cart}>
+                <li className={Style.Cart} onClick={showCart}>
                     <FontAwesomeIcon icon={faShoppingCart} />
                     <span>{totalItem}</span>
                 </li>

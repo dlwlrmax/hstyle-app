@@ -4,7 +4,7 @@ import New from './New/New';
 import Footer from '../../Footer/Footer';
 import Hot from './Hot/Hot';
 import Collections from './Collections/Collections';
-const Home = ({ addItemToFav }) => {
+const Home = ({ Items, addItemToFav, newItems, quickView }) => {
     document.title = 'HStyle';
     const formatNumb = numb => {
         return Intl.NumberFormat().format(numb);
@@ -13,9 +13,9 @@ const Home = ({ addItemToFav }) => {
     return (
         <div className='Home'>
             <Header />
-            <New formatNumb={formatNumb} addItemToFav={addItemToFav} />
+            <New formatNumb={formatNumb} addItemToFav={addItemToFav} Items={newItems} />
             <Collections />
-            <Hot formatNumb={formatNumb} />
+            <Hot formatNumb={formatNumb} Items={Items} addItemToFav={addItemToFav} />
             <Footer />
         </div>
     );

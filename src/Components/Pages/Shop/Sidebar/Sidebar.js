@@ -1,39 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import RadioInput from './RadioInput/RadioInput';
 import Style from './Sidebar.module.css';
-export default function Sidebar() {
+export default function Sidebar({ Items, getFilter }) {
+    const [clothes, setClothes] = useState(0);
+    const [glasses, setGlasses] = useState(0);
+    const [jewelry, setJewelry] = useState(0);
+
+    const [selectedInput, setSelectedInput] = useState('none');
+
+    useEffect(() => {
+        getTotalClothes();
+        getTotalGlasses();
+        getTotalJewelry();
+    });
+
+    const getTotalClothes = () => {
+        const _clothes = Items.filter(item => item.category === 'clothes');
+        setClothes(_clothes.length);
+    };
+    const getTotalGlasses = () => {
+        const _glasses = Items.filter(item => item.category === 'glasses');
+        setGlasses(_glasses.length);
+    };
+    const getTotalJewelry = () => {
+        const _jewelry = Items.filter(item => item.category === 'jewelry');
+        setJewelry(_jewelry.length);
+    };
+
+    const changeInput = e => {
+        setSelectedInput(e.target.value);
+        getFilter(e);
+    };
+
     return (
         <div className={Style.Sidebar}>
             <div className={Style.text}>Filter what you like</div>
             <div className={Style.Filter}>
                 <fieldset className={Style.Category}>
                     <div className={Style.title}>Category</div>
-                    <div className={Style.item}>
-                        <input type='radio' name='clothes' id='clothes' />
-                        <label htmlFor='clothes'>Clothes (12)</label>
-                    </div>
-                    <div className={Style.item}>
-                        <input type='radio' name='jewelry' id='jewelry' />
-                        <label htmlFor='jewelry'>Jewelry (32)</label>
-                    </div>
-                    <div className={Style.item}>
-                        <input type='radio' name='glasses' id='glasses' />
-                        <label htmlFor='glasses'>Glasses (11)</label>
-                    </div>
+                    <RadioInput changeInput={changeInput} selectedInput={selectedInput} total1={clothes} total2={jewelry} total3={glasses} />
                 </fieldset>
                 <fieldset className={Style.price}>
                     <div className={Style.title}>Price</div>
-                    <div className={Style.item}>
-                        <input type='radio' name='u100' id='u100' />
-                        <label htmlFor='u100'>$100- (21)</label>
-                    </div>
-                    <div className={Style.item}>
-                        <input type='radio' name='100t200' id='100t200' />
-                        <label htmlFor='100t200'>$100 - $200 (12)</label>
-                    </div>
-                    <div className={Style.item}>
-                        <input type='radio' name='200' id='200' />
-                        <label htmlFor='200'>$200+ (11)</label>
-                    </div>
                 </fieldset>
             </div>
         </div>

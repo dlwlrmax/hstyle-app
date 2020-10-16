@@ -2,7 +2,7 @@ import React from 'react';
 import Style from './Card.module.css';
 import Item from './Item/Item';
 
-export default function Card({ item, addItemToFav, formatNumb }) {
+export default function Card({ item, addItemToFav, formatNumb, quickView }) {
     return (
         <div className={Style.Item}>
             <Item item={item} addItemToFav={addItemToFav} />

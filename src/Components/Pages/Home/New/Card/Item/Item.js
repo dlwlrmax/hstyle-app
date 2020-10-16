@@ -3,8 +3,9 @@ import Style from './Item.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faHeart as emptyHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
-export default function Item({ item, addItemToFav }) {
+export default function Item({ item, addItemToFav, quickView }) {
     const empHeart = <FontAwesomeIcon icon={emptyHeart} />;
     const fulHeart = <FontAwesomeIcon style={{ color: '#d72d2d' }} icon={fullHeart} />;
 
@@ -14,9 +15,9 @@ export default function Item({ item, addItemToFav }) {
             <div className={Style.like} onClick={() => addItemToFav(item.id)}>
                 {item.isFav ? fulHeart : empHeart}
             </div>{' '}
-            <div className={Style.view}>
+            <Link to={`/v/${item.id}`} className={Style.view}>
                 <FontAwesomeIcon icon={faEye} />
-            </div>
+            </Link>
             <div className={Style.hover}>
                 <img src={item.image[1]} alt='321' />
             </div>
