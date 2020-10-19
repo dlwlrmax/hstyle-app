@@ -1,0 +1,171 @@
+.Section {
+	display: flex;
+	margin: auto;
+	margin-bottom: 100px;
+	justify-content: space-evenly;
+}
+
+.side {
+	text-align: right;
+	width: 30%;
+	position: relative;
+}
+
+.side img {
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.linkContainer {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.233);
+}
+
+.side a {
+	text-transform: capitalize;
+	font-size: 5em;
+	color: white;
+	font-weight: 600;
+}
+
+.side img {
+	width: 100%;
+	height: 100%;
+}
+
+.Title {
+	font-size: 2.5em;
+	color: var(--dark);
+	text-transform: uppercase;
+}
+
+.Items {
+	display: flex;
+	justify-content: space-evenly;
+	width: 65%;
+}
+
+.Item {
+	width: 20%;
+	text-align: left;
+}
+
+.Item .image {
+	width: 100%;
+	position: relative;
+}
+
+.like {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 9999;
+	color: var(--dark);
+	opacity: 0.8;
+	font-size: 1.2em;
+}
+
+.Item img {
+	width: 100%;
+	display: block;
+}
+
+.info {
+	margin-top: 15px;
+}
+
+.itemName {
+	font-size: 1.4em;
+	color: var(--light-black);
+	font-weight: 600;
+	line-height: 1.5;
+	padding-bottom: 15px;
+}
+
+.description {
+	font-size: 0.9em;
+	color: var(--dark);
+}
+
+.price {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-top: 10px;
+}
+
+.sale {
+	margin-top: 10px;
+}
+
+.sale>span:first-child {
+	padding-right: 10px;
+	font-size: 2em;
+	color: var(--light-black);
+}
+
+.sale>span:last-child {
+	text-decoration: line-through;
+	color: var(--dark);
+}
+
+.percent {
+	padding-bottom: 5px;
+	color: #d72d2d;
+}
+
+.container {
+	width: 20%;
+}
+
+@media (max-width:1368px) {
+	.Item {
+		width: 25%;
+	}
+
+	.itemName {
+		font-size: 1.5em;
+	}
+}
+
+@media (max-width:1024px) {
+	.Section {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.side {
+		width: 80%;
+	}
+
+	.Items {
+		width: 80%;
+		justify-content: space-between;
+		margin: 40px 0;
+	}
+
+	.container {
+		width: 30%;
+	}
+}
+
+@media (max-width:550px) {
+	.Items {
+		flex-direction: column;
+		align-items: center;
+	}
+
+
+	.container {
+		width: 80%;
+		margin: 20px;
+	}
+}

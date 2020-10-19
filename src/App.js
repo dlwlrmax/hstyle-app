@@ -1,36 +1,37 @@
 import React, { useState, useEffect } from 'react';
 //import Loading from './Components/Loading/Loading';
 import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
 import './App.css';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import Home from './Components/Pages/Home/Home';
-import Shop from './Components/Pages/Shop/Shop';
-import About from './Components/Pages/About/About';
-import Contact from './Components/Pages/Contact/Contact';
-import Collections from './Components/Pages/Collections/Collections';
-import CollectionsPage from './Components/Pages/Collections/Jewelries/CollectionsPage/CollectionsPage';
-import QuickView from './Components/Pages/QuickView/QuickView';
+import Home from './Pages/Home/Home';
+import Shop from './Pages/Shop/Shop';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
+import Collections from './Pages/Collections/Collections';
+import CollectionsPage from './Pages/Collections/Jewelries/CollectionsPage/CollectionsPage';
+import QuickView from './Pages/QuickView/QuickView';
 import Cart from './Components/Cart/Cart';
+import { motion, AnimatePresence } from 'framer-motion';
+import Product from './Pages/Product/Product';
+import Checkout from './Pages/Checkout/Checkout';
 //import { useSpring, animated } from 'react-spring';
 function App() {
     const [Items, setItems] = useState([]);
     const [isCartVisible, setCartVisible] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isScrollUp, setScrollUp] = useState(false);
-    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const position = window.scrollY;
-            if (scrollPosition > position) {
+            if (scrollPosition >= position) {
                 setScrollUp(true);
             } else {
                 setScrollUp(false);
             }
             setScrollPosition(position);
-            console.log(scrollPosition);
+            //console.log(scrollPosition);
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -95,9 +96,11 @@ function App() {
             removeItem(id);
         }
         setScrollUp(true);
+        setCartVisible(true);
         setTimeout(() => {
             setScrollUp(false);
-        }, 1000);
+            //setCartVisible(false);
+        }, 2000);
     };
     const addItem = item => {
         item.quantity = 1;
@@ -196,41 +199,67 @@ function App() {
         <div className='App'>
             <Router>
                 <Navbar Items={Items} cart={cart} showCart={toggleCart} isCartVisible={isCartVisible} isScrollUp={isScrollUp} />
-                {isCartVisible ? (
-                    <Cart
-                        cart={cart}
-                        removeItem={removeItem}
-                        formatNumb={formatNumb}
-                        toggleCart={toggleCart}
-                        incCount={incCount}
-                        decCount={decCount}
-                        updatePrice={updatePrice}
-                    />
-                ) : null}
-                <Switch>
-                    <Route
-                        path='/v/:id'
-                        render={props => <QuickView {...props} addItemToFav={addItemToFav} formatNumb={formatNumb} cart={cart} />}></Route>
 
-                    <Route path='/shop'>
-                        <Shop addItemToFav={addItemToFav} Items={Items} formatNumb={formatNumb} />
-                    </Route>
-                    <Route path='/about'>
-                        <About />
-                    </Route>
-                    <Route path='/contact'>
-                        <Contact />
-                    </Route>
-                    <Route path='/collections'>
-                        <Collections />
-                    </Route>
-                    <Route path='/jestina'>
-                        <CollectionsPage />
-                    </Route>
-                    <Route path='/' exact>
-                        <Home addItemToFav={addItemToFav} newItems={newProduct} Items={Items} formatNumb={formatNumb} />
-                    </Route>
-                </Switch>
+                <AnimatePresence>
+                    {isCartVisible && (
+                        <motion.div
+                            initial={{ opacity: 0, position: 'fixed', zIndex: 1000, width: '100%', x: '30%', top: 0, left: 0 }}
+                            animate={{ opacity: 1, x: '0%' }}
+                            exit={{ opacity: 0, x: '30%' }}>
+                            <Cart
+                                cart={cart}
+                                removeItem={removeItem}
+                                formatNumb={formatNumb}
+                                toggleCart={toggleCart}
+                                incCount={incCount}
+                                decCount={decCount}
+                                updatePrice={updatePrice}
+                                setCartVisible={setCartVisible}
+                            />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+                <AnimatePresence>
+                    <Switch>
+                        <Route
+                            path='/v/:id'
+                            render={props => <QuickView {...props} addItemToFav={addItemToFav} formatNumb={formatNumb} cart={cart} />}></Route>
+                        <Route
+                            path='/product/:id'
+                            render={props => <Product {...props} addItemToFav={addItemToFav} formatNumb={formatNumb} cart={cart} />}></Route>
+                        <Route path='/checkout'>
+                            <Checkout
+                                cart={cart}
+                                removeItem={removeItem}
+                                formatNumb={formatNumb}
+                                toggleCart={toggleCart}
+                                incCount={incCount}
+                                decCount={decCount}
+                                updatePrice={updatePrice}
+                            />
+                        </Route>
+                        <Route path='/shop'>
+                            <Shop addItemToFav={addItemToFav} Items={Items} formatNumb={formatNumb} />
+                        </Route>
+
+                        <Route path='/about'>
+                            <About />
+                        </Route>
+                        <Route path='/contact'>
+                            <Contact />
+                        </Route>
+                        <Route path='/collections'>
+                            <Collections />
+                        </Route>
+                        <Route path='/jestina'>
+                            <CollectionsPage />
+                        </Route>
+                        <Route path='/' exact>
+                            <Home addItemToFav={addItemToFav} newItems={newProduct} Items={Items} formatNumb={formatNumb} />
+                        </Route>
+                    </Switch>
+                </AnimatePresence>
+                <Footer />
             </Router>
         </div>
     );

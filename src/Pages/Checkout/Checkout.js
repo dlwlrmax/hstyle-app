@@ -1,38 +1,20 @@
-import React, { useRef, useEffect } from 'react';
-import Style from './Cart.module.css';
-import Item from './Item/Item';
-import { useSpring, animated } from 'react-spring';
+import { Button } from '@material-ui/core';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-export default function Cart({ cart, removeItem, formatNumb, toggleCart, incCount, decCount, updatePrice, setCartVisible }) {
-    // const showCart = useSpring({
-    //     from: { opacity: 0 },
-    //     to: { opacity: 1 },
-    // });
-
+import React from 'react';
+import { useSpring, animated } from 'react-spring';
+import Item from '../../Components/Cart/Item/Item';
+import AddressForm from './AddressForm/AddressForm';
+import Style from './Checkout.module.css';
+export default function Checkout({ cart, removeItem, formatNumb, toggleCart, incCount, decCount, updatePrice }) {
     const total = useSpring({
         from: { val: 0 },
         to: { val: cart.reduce((sum, item) => sum + (item.quantity * item.price * (100 - item.sale)) / 100, 0) },
     });
-    const onMouseEnter = () => {
-        setCartVisible(true);
-    };
-    const container = useRef(null);
-    useEffect(() => {
-        console.log(container.current);
-        container.current.scrollTo(0, 0);
-    }, []);
     return (
-        <animated.div className={Style.container}>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className={Style.modal}
-                onClick={toggleCart}></motion.div>
-            <div className={Style.Cart} onMouseEnter={onMouseEnter}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className={Style.Checkout}>
+            <div className={Style.Cart}>
                 <div className={Style.title}>Items in your cart</div>
-                <div className={Style.itemContainer} ref={container}>
+                <div className={Style.itemContainer}>
                     {cart.length ? (
                         cart.map(item => {
                             return (
@@ -54,15 +36,20 @@ export default function Cart({ cart, removeItem, formatNumb, toggleCart, incCoun
                         </div>
                     )}
                 </div>
-
+            </div>
+            <div className={Style.right}>
                 <div className={Style.checkout}>
-                    <Link to='/checkout'>Check out</Link>
                     <div className={Style.TotalPrice}>
                         <span>Total: ￥</span>
                         <animated.span>{total.val.interpolate(val => Math.floor(val))}</animated.span>
                     </div>
                 </div>
+
+                <div className={Style.content}>
+                    <AddressForm />
+                </div>
+                <Button variant='contained'>Place your order</Button>
             </div>
-        </animated.div>
+        </motion.div>
     );
 }

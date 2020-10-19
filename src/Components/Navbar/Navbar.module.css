@@ -21,13 +21,6 @@
 	left: 0;
 	background-color: var(--light-black);
 	z-index: 9999999;
-	box-shadow:
-		0 1.1px 2.2px rgba(0, 0, 0, 0.051),
-		0 2.7px 5.3px rgba(0, 0, 0, 0.073),
-		0 5px 10px rgba(0, 0, 0, 0.09),
-		0 8.9px 17.9px rgba(0, 0, 0, 0.107),
-		0 16.7px 33.4px rgba(0, 0, 0, 0.129),
-		0 40px 80px rgba(0, 0, 0, 0.18);
 
 }
 
@@ -99,6 +92,10 @@
 	right: 0;
 }
 
+.Cart:hover {
+	cursor: pointer;
+}
+
 .cart .IconBar li:hover {
 	cursor: pointer;
 }
@@ -125,7 +122,9 @@
 }
 
 @media (max-width:1200px) {
-	.navContainer {
+
+	.navContainer,
+	.navContainerStick {
 		justify-content: space-evenly;
 	}
 
@@ -158,7 +157,8 @@
 		transition: 0.4s;
 	}
 
-	.navLinkContainer a {
+	.navLinkContainer,
+	.navContainerStick a {
 		transition: 0.3s;
 	}
 

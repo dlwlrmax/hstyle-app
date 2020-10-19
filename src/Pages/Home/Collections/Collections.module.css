@@ -1,0 +1,97 @@
+.Collection {
+	width: 70%;
+	margin: auto;
+}
+
+.Title {
+	font-size: 4em;
+	margin-top: 100px;
+	color: var(--dark);
+	margin-bottom: 70px;
+
+}
+
+.Items {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	height: 500px;
+
+}
+
+.Item {
+	width: 30%;
+}
+
+.Item {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+.Item img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.text {
+	font-size: 4em;
+	font-weight: 600;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin: auto;
+	color: white;
+	z-index: 999;
+}
+
+.image {
+	position: relative;
+	height: 100%;
+}
+
+.dropShadow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.3;
+	transition: 1s;
+}
+
+.Item:hover .dropShadow {
+	background-color: #d72d2d;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+@media (max-width:1100px) {
+	.Collection {
+		width: 90%;
+	}
+}
+
+@media (max-width:700px) {
+	.Items {
+		flex-flow: column;
+		height: unset;
+	}
+
+
+
+	.Item {
+		width: 60%;
+		margin: 20px auto;
+	}
+}
+
+@media (max-width:420px) {
+	.Item {
+		width: 80%;
+	}
+}

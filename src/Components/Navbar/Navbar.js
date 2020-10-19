@@ -72,7 +72,7 @@ const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
     );
 
     const MoboNav = (
-        <div className={Style.navContainer}>
+        <animated.div style={showNav} className={isScrollUp || isCartVisible ? Style.navContainerStick : Style.navContainer}>
             <div className={Style.LeftElements}>
                 <div className={Style.Menu} onClick={openSidebar}>
                     <FontAwesomeIcon icon={faEllipsisH} />
@@ -94,7 +94,7 @@ const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
                 </li>
             </ul>
             {isSidebarOpened && <MoboBar closeNavHandler={closeNavHandler} />}
-        </div>
+        </animated.div>
     );
     return browserWidth > 1200 ? desktopNav : MoboNav;
 };

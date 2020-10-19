@@ -1,0 +1,35 @@
+.New {
+	width: 90%;
+	margin: auto;
+}
+
+.title {
+	font-size: 4em;
+	margin-top: 100px;
+	color: var(--dark);
+	margin-bottom: 70px;
+}
+
+.Slider {
+	display: flex;
+	justify-content: space-around;
+	height: 70vh;
+}
+
+.container {
+	width: 17%;
+}
+
+@media (max-width:1024px) {
+	.Slider {
+		height: unset;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.container {
+		width: 200px;
+		margin: 20px;
+	}
+
+}
