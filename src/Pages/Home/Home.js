@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header/Header';
 import New from './New/New';
 import Hot from './Hot/Hot';
@@ -7,7 +7,9 @@ import ScrollToTop from '../../Components/ScrollToTop/ScrollToTop';
 import { motion } from 'framer-motion';
 const Home = ({ Items, addItemToFav, newItems, formatNumb, setQuery, query }) => {
     document.title = 'HStyle';
-
+    useEffect(() => {
+        setQuery('?');
+    }, []);
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='Home'>
             <ScrollToTop />

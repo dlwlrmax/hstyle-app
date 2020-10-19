@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import Loading from './Components/Loading/Loading';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import './App.css';
@@ -15,6 +14,7 @@ import Cart from './Components/Cart/Cart';
 import { motion, AnimatePresence } from 'framer-motion';
 import Product from './Pages/Product/Product';
 import Checkout from './Pages/Checkout/Checkout';
+
 //import { useSpring, animated } from 'react-spring';
 function App() {
     const [Items, setItems] = useState([]);
@@ -22,7 +22,6 @@ function App() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isScrollUp, setScrollUp] = useState(false);
     const [query, setQuery] = useState('?');
-
     useEffect(() => {
         const handleScroll = () => {
             const position = window.scrollY;
@@ -54,6 +53,7 @@ function App() {
     const getQuery = str => {
         setQuery(str);
     };
+
     const [cart, setCart] = useState([]);
     useEffect(() => {
         async function getData() {
