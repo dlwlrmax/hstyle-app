@@ -43,13 +43,11 @@
 }
 
 .Jewelries .leftContent img:nth-child(2) {
-	top: 10%;
 	left: 0;
 }
 
 .Jewelries .leftContent img:last-child {
 	right: 0;
-	bottom: 10%;
 }
 
 .rightContent {
@@ -84,4 +82,25 @@
 	padding: 0 5%;
 	margin-top: 10px;
 	background-color: var(--dark);
+}
+
+@media (max-width:600px) {
+	.Jewelries {
+		height: unset;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.Jewelries>div:first-child {
+		margin: 30px auto;
+	}
+
+	.Jewelries>div {
+		width: 90%;
+		margin: auto
+	}
+
+	.Jewelries .leftContent {
+		justify-content: flex-end;
+	}
 }

@@ -46,9 +46,9 @@ export default function Sidebar({ Items, getFilter, filterItems }) {
                         total={Items.length}
                     />
                 </fieldset>
-                <fieldset className={Style.price}>
+                {/* <fieldset className={Style.price}>
                     <div className={Style.title}>Price</div>
-                </fieldset>
+                </fieldset> */}
             </div>
         </div>
     );

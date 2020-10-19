@@ -11,7 +11,12 @@ const About = () => {
     document.title = 'About';
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='About'>
+        <motion.div
+            initial={{ opacity: 0, height: '0%' }}
+            animate={{ opacity: 1, height: '100%' }}
+            exit={{ opacity: 0, height: '100%' }}
+            className='About'>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}></motion.div>
             <ScrollToTop />
             <Header />
             <Section

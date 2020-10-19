@@ -11,8 +11,8 @@ export default function Shop({ Items, addItemToFav }) {
     const [filter, setFilter] = useState('all');
     const masonryOptions = {
         transition: 0.5,
-        columnWidth: 50,
-        gutter: 30,
+        columnWidth: 150,
+        columnGutter: 18,
     };
     const filterItems = () => {
         if (filter === 'all') {

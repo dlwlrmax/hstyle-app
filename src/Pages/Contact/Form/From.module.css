@@ -100,3 +100,21 @@
 .group textarea {
 	height: 100%;
 }
+
+@media (max-width:1024px) {
+	.From {
+		flex-direction: column;
+	}
+
+	.From>div {
+		width: 100%;
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	.fromContainer {
+		align-items: center;
+	}
+}

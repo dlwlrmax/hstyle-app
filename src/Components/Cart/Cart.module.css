@@ -79,3 +79,7 @@
 .noItem {
 	color: var(--dark);
 }
+
+.noItem img {
+	width: 100%;
+}

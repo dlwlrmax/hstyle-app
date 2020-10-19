@@ -9,7 +9,7 @@
 
 .goBack {
 	position: absolute;
-	z-index: 9999;
+	z-index: 999;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
@@ -134,4 +134,26 @@
 	width: 80%;
 	display: flex;
 	justify-content: flex-end;
+}
+
+@media (max-width:1024px) {
+	.ProductDetail {
+		height: unset;
+	}
+
+	.Content {
+		flex-direction: column;
+		height: unset;
+		align-items: center;
+		margin-top: 70px;
+		margin-bottom: 50px;
+	}
+
+	.ProductImage {
+		width: 80%;
+	}
+
+	.productInfo {
+		width: 80%;
+	}
 }

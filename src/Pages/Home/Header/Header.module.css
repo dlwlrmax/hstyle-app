@@ -89,3 +89,9 @@
 	padding: 5px 30px;
 	font-size: 2em;
 }
+
+@media (max-width:1024px) {
+	.banner img {
+		height: 100%;
+	}
+}

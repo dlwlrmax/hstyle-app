@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faSearch, faShoppingCart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import MoboBar from './MoboBar/MoboBar';
 import { useSpring, animated } from 'react-spring';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
     const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
@@ -93,7 +94,16 @@ const Navbar = ({ cart, showCart, isScrollUp, isCartVisible }) => {
                     <FontAwesomeIcon icon={faSignInAlt} />
                 </li>
             </ul>
-            {isSidebarOpened && <MoboBar closeNavHandler={closeNavHandler} />}
+            <AnimatePresence>
+                {isSidebarOpened && (
+                    <motion.div
+                        initial={{ opacity: 0, position: 'fixed', zIndex: 1000, width: '100%', x: '-10%', top: 0, left: 0 }}
+                        animate={{ opacity: 1, x: '0%' }}
+                        exit={{ opacity: 0, x: '-10%' }}>
+                        <MoboBar closeNavHandler={closeNavHandler} />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </animated.div>
     );
     return browserWidth > 1200 ? desktopNav : MoboNav;

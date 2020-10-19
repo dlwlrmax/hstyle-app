@@ -87,3 +87,18 @@
 	margin-top: 10px;
 	background-color: var(--dark);
 }
+
+@media (max-width:600px) {
+	.Clothes {
+		flex-direction: column-reverse;
+		margin: 50px auto;
+	}
+
+	.leftContent {
+		width: 90% !important;
+	}
+
+	.Clothes>div {
+		margin: 20px auto;
+	}
+}

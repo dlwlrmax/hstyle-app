@@ -83,3 +83,19 @@
 	color: white;
 	font-weight: 600;
 }
+
+@media (max-width:600px) {
+	.Glasses {
+		flex-direction: column;
+	}
+
+	.Glasses>div {
+		width: 90%;
+		margin: auto
+	}
+
+	.background {
+		right: 0;
+		margin: auto;
+	}
+}

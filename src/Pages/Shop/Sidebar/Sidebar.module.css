@@ -35,3 +35,10 @@
 	padding-left: 10px;
 }
 
+@media (max-width:1024px) {
+	.Sidebar {
+		height: unset;
+		border-bottom: 2px solid lightgray;
+		margin-bottom: 30px;
+	}
+}

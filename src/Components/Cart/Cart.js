@@ -56,7 +56,9 @@ export default function Cart({ cart, removeItem, formatNumb, toggleCart, incCoun
                 </div>
 
                 <div className={Style.checkout}>
-                    <Link to='/checkout'>Check out</Link>
+                    <Link to='/checkout' onClick={() => setCartVisible(false)}>
+                        Check out
+                    </Link>
                     <div className={Style.TotalPrice}>
                         <span>Total: ￥</span>
                         <animated.span>{total.val.interpolate(val => Math.floor(val))}</animated.span>
