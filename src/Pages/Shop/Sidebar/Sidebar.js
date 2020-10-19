@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import RadioInput from './RadioInput/RadioInput';
 import Style from './Sidebar.module.css';
 import { useHistory } from 'react-router-dom';
+import Slider from '@material-ui/core/Slider';
+
 export default function Sidebar({ Items, getQuery }) {
     const [clothes, setClothes] = useState(0);
     const [glasses, setGlasses] = useState(0);
@@ -38,7 +40,15 @@ export default function Sidebar({ Items, getQuery }) {
 
         console.log(typeof window.location.search);
     };
+    const [value, setValue] = React.useState([0, 400]);
 
+    const handleChange = (e, newValue) => {
+        setValue(newValue);
+        history.push(`?&&price=${value[0]}-${value[1]}`);
+    };
+    const valuetext = value => {
+        return `${value}`;
+    };
     return (
         <div className={Style.Sidebar}>
             <div className={Style.text}>Filter what you like</div>
@@ -56,6 +66,15 @@ export default function Sidebar({ Items, getQuery }) {
                 </fieldset>
                 <fieldset className={Style.price}>
                     <div className={Style.title}>Price</div>
+                    <Slider
+                        value={value}
+                        onChange={handleChange}
+                        valueLabelDisplay='auto'
+                        aria-labelledby='range-slider'
+                        getAriaValueText={valuetext}
+                        min={0}
+                        max={400}
+                    />
                 </fieldset>
             </div>
         </div>
