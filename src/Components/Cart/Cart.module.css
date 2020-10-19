@@ -57,7 +57,7 @@
 
 .itemContainer {
 	width: 100%;
-	height: 80%;
+	height: 75%;
 	overflow: auto;
 	display: flex;
 	flex-flow: column-reverse;

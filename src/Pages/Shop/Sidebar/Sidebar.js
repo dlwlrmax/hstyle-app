@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import RadioInput from './RadioInput/RadioInput';
 import Style from './Sidebar.module.css';
-export default function Sidebar({ Items, getFilter, filterItems }) {
+import { useHistory } from 'react-router-dom';
+export default function Sidebar({ Items, getQuery }) {
     const [clothes, setClothes] = useState(0);
     const [glasses, setGlasses] = useState(0);
     const [jewelry, setJewelry] = useState(0);
@@ -25,10 +26,17 @@ export default function Sidebar({ Items, getFilter, filterItems }) {
         setJewelry(_jewelry.length);
     };
     const [selectedInput, setSelectedInput] = useState('all');
-
+    const history = useHistory();
     const changeInput = e => {
         setSelectedInput(e.target.value);
-        getFilter(e);
+        history.push(`?${e.target.name}=${e.target.value}`);
+        if (e.target.value === 'all') {
+            getQuery('?');
+        } else {
+            getQuery(window.location.search);
+        }
+
+        console.log(typeof window.location.search);
     };
 
     return (
@@ -46,9 +54,9 @@ export default function Sidebar({ Items, getFilter, filterItems }) {
                         total={Items.length}
                     />
                 </fieldset>
-                {/* <fieldset className={Style.price}>
+                <fieldset className={Style.price}>
                     <div className={Style.title}>Price</div>
-                </fieldset> */}
+                </fieldset>
             </div>
         </div>
     );

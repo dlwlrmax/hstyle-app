@@ -5,7 +5,7 @@ import Hot from './Hot/Hot';
 import Collections from './Collections/Collections';
 import ScrollToTop from '../../Components/ScrollToTop/ScrollToTop';
 import { motion } from 'framer-motion';
-const Home = ({ Items, addItemToFav, newItems, formatNumb }) => {
+const Home = ({ Items, addItemToFav, newItems, formatNumb, setQuery, query }) => {
     document.title = 'HStyle';
 
     return (

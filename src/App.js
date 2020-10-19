@@ -21,6 +21,7 @@ function App() {
     const [isCartVisible, setCartVisible] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isScrollUp, setScrollUp] = useState(false);
+    const [query, setQuery] = useState('?');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,15 +43,17 @@ function App() {
 
     useEffect(() => {
         async function getData() {
-            const res = await fetch('https://h-style-data.herokuapp.com/products?sort=date&&order=desc');
+            const res = await fetch(`https://h-style-data.herokuapp.com/products${query}&&sort=date&&order=desc`);
             const data = await res.json();
-            console.log(data);
+            console.log(query);
             setItems(data);
             filterNewItem(data);
         }
         getData();
-    }, []);
-
+    }, [query]);
+    const getQuery = str => {
+        setQuery(str);
+    };
     const [cart, setCart] = useState([]);
     useEffect(() => {
         async function getData() {
@@ -194,6 +197,9 @@ function App() {
         setCart(_cart);
         updateAPIQuantity(item, _quantity);
     };
+    const resetItems = data => {
+        setItems(data);
+    };
 
     return (
         <div className='App'>
@@ -238,10 +244,20 @@ function App() {
                                 updatePrice={updatePrice}
                             />
                         </Route>
-                        <Route path='/shop'>
-                            <Shop addItemToFav={addItemToFav} Items={Items} formatNumb={formatNumb} />
-                        </Route>
-
+                        <Route
+                            path='/shop'
+                            render={props => (
+                                <Shop
+                                    {...props}
+                                    addItemToFav={addItemToFav}
+                                    Items={Items}
+                                    formatNumb={formatNumb}
+                                    setCartVisible={setCartVisible}
+                                    setScrollUp={setScrollUp}
+                                    setShopItems={resetItems}
+                                    getQuery={getQuery}
+                                />
+                            )}></Route>
                         <Route path='/about'>
                             <About />
                         </Route>
@@ -255,7 +271,17 @@ function App() {
                             <CollectionsPage />
                         </Route>
                         <Route path='/' exact>
-                            <Home addItemToFav={addItemToFav} newItems={newProduct} Items={Items} formatNumb={formatNumb} />
+                            <Home
+                                addItemToFav={addItemToFav}
+                                newItems={newProduct}
+                                Items={Items}
+                                formatNumb={formatNumb}
+                                setHomeItems={resetItems}
+                                setQuery={setQuery}
+                                onClick={() => {
+                                    setQuery('?');
+                                }}
+                            />
                         </Route>
                     </Switch>
                 </AnimatePresence>
